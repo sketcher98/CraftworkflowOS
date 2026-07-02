@@ -1,18 +1,27 @@
 from runtime.context import OperatingContext
 from runtime.executive import execute
 
-ctx = OperatingContext(
-    company_loaded=True,
-    identity_loaded=True,
-    principles_loaded=True,
-    company_state_loaded=True,
-    current_project="CraftworkflowOS",
-    current_objective="Build Hermes COO",
-)
+ctx = OperatingContext()
 
 result = execute(
-    "Improve the client onboarding process",
+    "What should I work on today?",
     ctx
 )
 
 print(result)
+
+print()
+print("----- Loader Test -----")
+print()
+
+print("Company characters:",
+      len(ctx.company["content"]))
+
+print("Identity characters:",
+      len(ctx.identity["content"]))
+
+print("Principles characters:",
+      len(ctx.principles["content"]))
+
+print("Company State characters:",
+      len(ctx.company_state["content"]))

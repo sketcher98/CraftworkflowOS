@@ -15,6 +15,8 @@ from runtime.checkpoint import save_checkpoint
 
 def execute(task: str, runtime):
 
+    runtime = load_company(runtime)
+
     runtime = refresh_runtime(runtime)
 
     result = run_mission(task, runtime)

@@ -21,6 +21,11 @@ class OperatingContext:
     current_client: str | None = None
     current_objective: str | None = None
 
+    company: dict = field(default_factory=dict)
+    identity: dict = field(default_factory=dict)
+    principles: dict = field(default_factory=dict)
+    company_state: dict = field(default_factory=dict)
+
     saved_at: str | None = None
     
     last_refresh: str = field(
