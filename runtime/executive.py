@@ -11,6 +11,9 @@ from runtime.refresh import refresh_runtime
 from runtime.mission import run_mission
 from runtime.reflection import reflect
 from runtime.checkpoint import save_checkpoint
+from runtime.planner import collect_context
+from runtime.priority import choose_priority
+from runtime.briefing import create_briefing
 
 
 def execute(task: str, runtime):
@@ -19,7 +22,17 @@ def execute(task: str, runtime):
 
     runtime = refresh_runtime(runtime)
 
-    result = run_mission(task, runtime)
+    if task.lower() == "what should i work on today?":
+
+        context = collect_context(runtime)
+
+        priority = choose_priority(context)
+
+        result = create_briefing(priority)
+
+    else:
+
+        result = run_mission(task, runtime)
 
     reflect(task, result, runtime)
 
