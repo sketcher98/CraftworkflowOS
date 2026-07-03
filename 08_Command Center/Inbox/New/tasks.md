@@ -1,13 +1,19 @@
 # Tasks
 
-URGENT
+## URGENT
 
-Finish Hermes COO Runtime
+- Finish Hermes Runtime
 
-CLIENT
+- Fix Executive Planner
 
-Complete CraftedWorkflows onboarding automation
+## HIGH
 
-LOW
+- Finish CraftedWorkflows Website
 
-Organize screenshots
+## MEDIUM
+
+- Write LinkedIn Content
+
+## LOW
+
+- Organize Downloads Folder

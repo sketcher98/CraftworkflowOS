@@ -4,10 +4,11 @@ CraftworkflowOS Loader
 Loads the core business documents into the
 OperatingContext.
 
-Version: 0.2
+Version: 0.3
 """
 
 from pathlib import Path
+from runtime.org import load_org
 
 ROOT = Path(__file__).parent.parent
 
@@ -32,8 +33,13 @@ def read_markdown(relative_path: str) -> str:
 
 
 def load_company(runtime):
+    """
+    Loads all core company knowledge into
+    the runtime.
 
-    # Don't reload if already loaded.
+    Only loads once per session.
+    """
+
     if runtime.company_loaded:
         print("Company already loaded.")
         return runtime
@@ -53,6 +59,8 @@ def load_company(runtime):
     runtime.company_state["content"] = read_markdown(
         "02_COO/company_state.md"
     )
+
+    runtime.organization = load_org()
 
     runtime.company_loaded = True
     runtime.identity_loaded = True

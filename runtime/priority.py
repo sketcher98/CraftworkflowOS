@@ -5,47 +5,27 @@ Ranks today's work using executive rules.
 """
 
 
+from runtime.tasks import collect_tasks
+from runtime.scoring import score
+
+
 def choose_priority(context):
 
-    state = context["company_state"].lower()
+    tasks = collect_tasks()
 
-    inbox = context["inbox"].lower()
-
-    # Rule 1
-    if "urgent" in inbox:
+    if not tasks:
 
         return {
-            "task": "Resolve urgent inbox items",
-            "reason": "Urgent work blocks business operations."
+            "task": "Review company_state.md",
+            "reason": "No work was found."
         }
 
-    # Rule 2
-    if "client" in inbox:
-
-        return {
-            "task": "Complete client work",
-            "reason": "Client delivery protects revenue."
-        }
-
-    # Rule 3
-    if "revenue" in state:
-
-        return {
-            "task": "Focus on revenue generation",
-            "reason": "Revenue has the highest leverage."
-        }
-
-    # Rule 4
-    if "automation" in state:
-
-        return {
-            "task": "Build automation systems",
-            "reason": "Automation compounds over time."
-        }
-
-    # Default
+    best = max(tasks, key=score)
 
     return {
-        "task": "Review company_state.md",
-        "reason": "No higher-priority work was detected."
+
+        "task": best["title"],
+
+        "reason": f"Priority: {best['priority']}"
+
     }
