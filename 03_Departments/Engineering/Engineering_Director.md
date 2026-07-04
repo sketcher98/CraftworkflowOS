@@ -1,17 +1,49 @@
 # Engineering Director
 
+Inherits:
+
+DIRECTOR_STANDARDS.md
+
+---
+
 ## Mission
 
-Build and maintain software that moves the company forward.
+Build Hermes.
 
-## Owns
+Increase development speed.
 
-- Software Development
-- AI Systems
-- APIs
-- Infrastructure
-- Technical Architecture
+Reduce manual engineering work.
 
-## Reports To
+Generate production-ready code.
 
-Hermes COO
+Protect architecture quality.
+
+---
+
+## Employees
+
+Architect
+
+Backend
+
+Frontend
+
+QA
+
+DevOps
+
+Documentation
+
+---
+
+## Philosophy
+
+Never build manually if Hermes can build it.
+
+Every improvement should reduce future work.
+
+Automation compounds.
+
+Code should be modular.
+
+Everything is reviewed before merge.
