@@ -50,9 +50,9 @@ def request(capability: str, objective: str = ""):
         if executor is None:
             continue
 
-        completed.append(
-            executor(objective)
-        )
+        artifact = executor(objective)
+
+        completed.append(artifact)
 
     return {
         "capability": capability,
