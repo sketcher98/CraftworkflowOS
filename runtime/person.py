@@ -18,10 +18,19 @@ def load_person(path: Path):
         encoding="utf-8"
     )
 
-    # Use parent directory name for employee (e.g., "Discovery" from "Employees/Discovery/Profile.md")
-    # For directors, the file is named like "Commercial_Director.md" so use stem
-    if path.parent.name == "Employees":
-        name = path.parent.parent.name  # e.g., "Discovery"
+    # For employee: path = 03_Departments/Commercial/Employees/Discovery/Profile.md
+    #   path.parent = Discovery/
+    #   path.parent.parent = Employees/
+    #   path.parent.parent.name = "Employees"
+    #   Employee name = path.parent.name = "Discovery"
+    #   
+    # For director: path = 03_Departments/Commercial/Commercial_Director.md
+    #   path.parent = Commercial/
+    #   path.parent.name != "Employees"
+    #   Director name = path.stem.replace("_", " ") = "Commercial Director"
+    
+    if path.parent.parent.name == "Employees":
+        name = path.parent.name  # e.g., "Discovery"
     else:
         name = path.stem.replace("_", " ")
 

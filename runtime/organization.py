@@ -1,7 +1,7 @@
 """
 Organization Loader
 
-Discovers the company automatically.
+Discovers the company automatically from 03_Departments.
 """
 
 from pathlib import Path
@@ -17,6 +17,9 @@ IGNORE = {
 
 
 def discover_organization():
+    """
+    Discover the full organization including directors and employees.
+    """
 
     root = ROOT / "03_Departments"
 
@@ -41,13 +44,16 @@ def discover_organization():
 
         if employee_folder.exists():
 
-            for employee in sorted(
-                employee_folder.glob("*.md")
-            ):
+            for employee_dir in sorted(employee_folder.iterdir()):
+                if not employee_dir.is_dir():
+                    continue
+                for employee in sorted(
+                    employee_dir.glob("*.md")
+                ):
 
-                employees.append(
-                    load_person(employee)
-                )
+                    employees.append(
+                        load_person(employee)
+                    )
 
         organization[department.name] = {
             "director": director,
