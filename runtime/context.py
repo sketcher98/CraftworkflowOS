@@ -43,6 +43,13 @@ class OperatingContext:
     archive: dict = field(default_factory=dict)
     knowledge_base: dict = field(default_factory=dict)
 
+    # Memory Manager (new)
+    memory_manager: any = None
+
+    # Working Memory (new)
+    working_memory: any = None
+    identity_memory: any = None
+
     # Current focus
     current_project: str | None = None
     current_client: str | None = None
@@ -53,6 +60,12 @@ class OperatingContext:
     last_refresh: str = field(
         default_factory=lambda: datetime.now().isoformat()
     )
+
+    def __post_init__(self):
+        """Initialize memory manager if not provided."""
+        if self.memory_manager is None:
+            from runtime.memory.manager import MemoryManager
+            self.memory_manager = MemoryManager()
 
     def to_dict(self):
         return {
