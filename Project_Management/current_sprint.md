@@ -18,8 +18,14 @@ Completed
 ✅ Daily Commercial Briefing
 ✅ Director Delegation (6 Commercial employees)
 ✅ Refresh Policy (file change detection, tiered invalidation)
+✅ Workspace API (CLI + Python)
+✅ Project Manager (CRUD, archive, update)
 
 Next
 
-🔄 Workspace API
-⏳ Project Manager
+🔄 Marketing Department
+⏳ Operations Department
+⏳ Finance Department
+⏳ Delivery Department
+⏳ Creative Department
+⏳ Engineering Department (activate 6 employees)

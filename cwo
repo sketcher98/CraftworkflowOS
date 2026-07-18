@@ -1,0 +1,239 @@
+#!/usr/bin/env python3
+"""
+Workspace API CLI
+
+Command-line interface for CraftworkflowOS Workspace API.
+"""
+
+import sys
+import json
+from runtime.workspace_api import get_api, APIResponse
+
+
+def print_response(response: APIResponse):
+    """Pretty print API response."""
+    if response.success:
+        print(json.dumps(response.data, indent=2, default=str))
+    else:
+        print(f"ERROR: {response.error}", file=sys.stderr)
+        sys.exit(1)
+
+
+def cmd_init(args):
+    """Initialize workspace."""
+    api = get_api()
+    response = api.initialize(force_refresh=getattr(args, 'force', False))
+    print_response(response)
+
+
+def cmd_company(args):
+    """Get company info."""
+    api = get_api()
+    response = api.get_company()
+    print_response(response)
+
+
+def cmd_org(args):
+    """Get organization structure."""
+    api = get_api()
+    response = api.get_org()
+    print_response(response)
+
+
+def cmd_inbox(args):
+    """Get inbox tasks."""
+    api = get_api()
+    response = api.get_inbox()
+    print_response(response)
+
+
+def cmd_projects(args):
+    """Get active projects."""
+    api = get_api()
+    response = api.get_projects()
+    print_response(response)
+
+
+def cmd_client(args):
+    """Get current client."""
+    api = get_api()
+    response = api.get_current_client()
+    print_response(response)
+
+
+def cmd_context(args):
+    """Get current runtime context status."""
+    api = get_api()
+    response = api.get_context_status()
+    print_response(response)
+
+
+def cmd_ask(args):
+    """Ask executive question."""
+    api = get_api()
+    question = " ".join(args.question) if args.question else "what should i work on today?"
+    response = api.execute(question)
+    print_response(response)
+
+
+def cmd_commercial(args):
+    """Run commercial briefing."""
+    api = get_api()
+    response = api.run_commercial_briefing()
+    if response.success:
+        # Print just the formatted briefing
+        print(response.data.get("briefing", ""))
+    else:
+        print_response(response)
+
+
+def cmd_checkpoint_save(args):
+    """Save checkpoint."""
+    api = get_api()
+    response = api.save_checkpoint()
+    print_response(response)
+
+
+def cmd_checkpoint_load(args):
+    """Load checkpoint."""
+    api = get_api()
+    response = api.load_checkpoint()
+    print_response(response)
+
+
+def cmd_project_create(args):
+    """Create a new project."""
+    api = get_api()
+    response = api.create_project(
+        name=args.name,
+        description=args.description,
+        objective=args.objective
+    )
+    print_response(response)
+
+
+def cmd_project_list(args):
+    """List all projects."""
+    api = get_api()
+    if args.all:
+        response = api.get_all_projects()
+    else:
+        response = api.get_projects()
+    print_response(response)
+
+
+def cmd_project_show(args):
+    """Show project details."""
+    api = get_api()
+    response = api.get_project(args.name)
+    print_response(response)
+
+
+def cmd_project_update(args):
+    """Update a project."""
+    api = get_api()
+    updates = {}
+    if args.description:
+        updates["description"] = args.description
+    if args.status:
+        updates["status"] = args.status
+    response = api.update_project(args.name, updates)
+    print_response(response)
+
+
+def cmd_project_archive(args):
+    """Archive a project."""
+    api = get_api()
+    response = api.archive_project(args.name)
+    print_response(response)
+
+
+def main():
+    import argparse
+    
+    parser = argparse.ArgumentParser(
+        prog="cwo",
+        description="CraftworkflowOS Workspace API CLI"
+    )
+    subparsers = parser.add_subparsers(dest="command", help="Commands")
+    
+    # Init
+    init_parser = subparsers.add_parser("init", help="Initialize workspace")
+    init_parser.add_argument("--force", action="store_true", help="Force warm cache refresh")
+    init_parser.set_defaults(func=cmd_init)
+    
+    # Company
+    subparsers.add_parser("company", help="Get company info").set_defaults(func=cmd_company)
+    
+    # Organization
+    subparsers.add_parser("org", help="Get organization structure").set_defaults(func=cmd_org)
+    
+    # Inbox
+    subparsers.add_parser("inbox", help="Get inbox tasks").set_defaults(func=cmd_inbox)
+    
+    # Projects
+    subparsers.add_parser("projects", help="Get active projects").set_defaults(func=cmd_projects)
+    
+    # Client
+    subparsers.add_parser("client", help="Get current client").set_defaults(func=cmd_client)
+    
+    # Context
+    subparsers.add_parser("context", help="Get runtime context status").set_defaults(func=cmd_context)
+    
+    # Ask
+    ask_parser = subparsers.add_parser("ask", help="Ask executive question")
+    ask_parser.add_argument("question", nargs="*", help="Question to ask")
+    ask_parser.set_defaults(func=cmd_ask)
+    
+    # Commercial briefing
+    subparsers.add_parser("commercial", help="Run daily commercial briefing").set_defaults(func=cmd_commercial)
+    
+    # Checkpoint
+    checkpoint_parser = subparsers.add_parser("checkpoint", help="Checkpoint operations")
+    checkpoint_sub = checkpoint_parser.add_subparsers(dest="checkpoint_cmd")
+    checkpoint_sub.add_parser("save", help="Save checkpoint").set_defaults(func=cmd_checkpoint_save)
+    checkpoint_sub.add_parser("load", help="Load checkpoint").set_defaults(func=cmd_checkpoint_load)
+    
+    # Project management
+    project_parser = subparsers.add_parser("project", help="Project management")
+    project_sub = project_parser.add_subparsers(dest="project_cmd", help="Project commands")
+    
+    project_create = project_sub.add_parser("create", help="Create new project")
+    project_create.add_argument("name", help="Project name")
+    project_create.add_argument("--description", help="Project description")
+    project_create.add_argument("--objective", help="Project objective")
+    project_create.set_defaults(func=cmd_project_create)
+    
+    project_list = project_sub.add_parser("list", help="List projects")
+    project_list.add_argument("--all", action="store_true", help="Include archived projects")
+    project_list.set_defaults(func=cmd_project_list)
+    
+    project_show = project_sub.add_parser("show", help="Show project details")
+    project_show.add_argument("name", help="Project name")
+    project_show.set_defaults(func=cmd_project_show)
+    
+    project_update = project_sub.add_parser("update", help="Update project")
+    project_update.add_argument("name", help="Project name")
+    project_update.add_argument("--description", help="Update description")
+    project_update.add_argument("--status", help="Update status")
+    project_update.set_defaults(func=cmd_project_update)
+    
+    project_archive = project_sub.add_parser("archive", help="Archive project")
+    project_archive.add_argument("name", help="Project name")
+    project_archive.set_defaults(func=cmd_project_archive)
+    
+    args = parser.parse_args()
+    
+    if not args.command:
+        parser.print_help()
+        sys.exit(1)
+    
+    if hasattr(args, 'func'):
+        args.func(args)
+    else:
+        parser.print_help()
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
