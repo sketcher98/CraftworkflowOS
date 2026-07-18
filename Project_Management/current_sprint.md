@@ -9,17 +9,17 @@ Teach Hermes to answer:
 Completed
 
 ✅ Runtime
-
 ✅ Operating Context
-
 ✅ Checkpoint
-
 ✅ Executive Loop
-
-Current
-
-🔄 Loader
+✅ Loader (Hot/Warm/Cold cache tiers)
+✅ Provider Registry & Real Providers (Browser, GPT-4o, Perplexity)
+✅ Commercial Pipeline (Discovery → Lead Intelligence → Outreach)
+✅ Daily Commercial Briefing
+✅ Director Delegation (6 Commercial employees)
 
 Next
 
-Refresh Policy
+🔄 Refresh Policy Implementation
+⏳ Workspace API
+⏳ Project Manager
