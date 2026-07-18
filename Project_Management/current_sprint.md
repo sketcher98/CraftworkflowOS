@@ -17,9 +17,9 @@ Completed
 ✅ Commercial Pipeline (Discovery → Lead Intelligence → Outreach)
 ✅ Daily Commercial Briefing
 ✅ Director Delegation (6 Commercial employees)
+✅ Refresh Policy (file change detection, tiered invalidation)
 
 Next
 
-🔄 Refresh Policy Implementation
-⏳ Workspace API
+🔄 Workspace API
 ⏳ Project Manager
