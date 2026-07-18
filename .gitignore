@@ -19,3 +19,34 @@ runtime/cache/*.json
 # OS
 Thumbs.db
 .DS_Store
+# Secrets
+.env
+.env.*
+*.env
+
+# Local configuration
+.local/
+config.local.*
+*.local.json
+
+# Hermes
+.hermes/
+.hermes-cache/
+
+# IDEs
+.idea/
+
+# Termux
+.termux/
+
+# Node
+node_modules/
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary
+tmp/
+temp/
