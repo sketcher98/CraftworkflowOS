@@ -342,6 +342,9 @@ Active
         """Update project (readme, status, etc.)."""
         self._ensure_initialized()
         try:
+            # Ensure re is available for regex operations
+            import re
+            
             # Find project
             project_path = self._find_project_path(project_name)
             
@@ -358,7 +361,6 @@ Active
             # Apply updates
             if "description" in updates:
                 # Simple replacement - in production use proper markdown parsing
-                import re
                 content = re.sub(
                     r"## Description\n.*?(?=\n## |\Z)",
                     f"## Description\n{updates['description']}",
