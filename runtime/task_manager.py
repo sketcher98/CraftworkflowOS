@@ -56,3 +56,12 @@ class TaskManager:
         )
 
         return pending[0]
+
+    def get_tasks(self, status: str = None, department: str = None):
+        """Get all tasks, optionally filtered by status and department."""
+        tasks = self.tasks
+        if status:
+            tasks = [t for t in tasks if t.status == status]
+        if department:
+            tasks = [t for t in tasks if t.department == department]
+        return tasks

@@ -82,8 +82,17 @@
     "recent_logs": {
         "files": {}
     },
-    "archive": {},
-    "knowledge_base": {},
-    "saved_at": "2026-07-19T00:12:44.420031",
-    "last_refresh": "2026-07-19T00:12:44.411614"
+    "archive": {
+        "files": {
+            "09_Archive/TestProject/README.md": "# TestProject\n\n## Objective\nTest the project management API\n\n## Description\nUpdated description for test project\n## Status\nCompleted\n## Created\n2026-07-19T00:19:39.736844\n",
+            "09_Archive/VerifyTest/README.md": "# VerifyTest\n\n## Objective\nVerify API works\n\n## Description\nTest project for verification\n\n## Status\nActive\n\n## Created\n2026-07-19T00:28:00.216968\n",
+            "09_Archive/VerifyTest2/README.md": "# VerifyTest2\n\n## Objective\nVerify API works\n\n## Description\nTest project for verification\n\n## Status\nIn Progress\n## Created\n2026-07-19T00:28:51.697830\n",
+            "09_Archive/FinalTest/README.md": "# FinalTest\n\n## Objective\nTest complete API\n\n## Description\nVerified complete\n## Status\nCompleted\n## Created\n2026-07-19T00:30:14.066684\n"
+        }
+    },
+    "knowledge_base": {
+        "files": {}
+    },
+    "saved_at": "2026-07-19T00:30:14.099404",
+    "last_refresh": "2026-07-19T00:30:14.044222"
 }
