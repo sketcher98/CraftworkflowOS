@@ -6,8 +6,7 @@ Every request passes through this file.
 This is the brain of CraftworkflowOS.
 """
 
-from runtime.loader import load_company
-from runtime.refresh import refresh_runtime
+from runtime.loader import load_company, refresh_runtime
 from runtime.mission import run_mission
 from runtime.reflection import reflect
 from runtime.checkpoint import save_checkpoint
@@ -18,9 +17,11 @@ from runtime.briefing import create_briefing
 
 def execute(task: str, runtime):
 
+    # Load hot cache (static context) - once per session
     runtime = load_company(runtime)
 
-    runtime = refresh_runtime(runtime)
+    # Refresh warm cache (dynamic context) for current task
+    runtime = refresh_runtime(runtime, tier="warm")
 
     if task.lower() == "what should i work on today?":
 
