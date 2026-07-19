@@ -84,26 +84,26 @@
     },
     "archive": {},
     "knowledge_base": {},
-    "saved_at": "2026-07-19T01:03:27.405721",
-    "last_refresh": "2026-07-19T01:03:27.401022",
+    "saved_at": "2026-07-19T02:13:21.506596",
+    "last_refresh": "2026-07-19T02:13:21.505110",
     "working_memory": {
-        "current_objective": "Test objective",
-        "active_project": "TestProject",
-        "active_client": "TestClient",
-        "session_notes": "Test notes",
+        "current_objective": "Test",
+        "active_project": "Proj",
+        "active_client": "Client",
+        "session_notes": "Notes",
         "inbox_snapshot": {
             "tasks.md": "test"
         },
         "priorities": [
-            "Task 1",
-            "Task 2"
+            "A",
+            "B"
         ],
         "blockers": [
-            "Blocker 1"
+            "X"
         ],
         "active_skills": [
             "outreach/founder-mirror"
         ],
-        "last_updated": "2026-07-19T01:03:26.503679"
+        "last_updated": "2026-07-19T02:04:11.545285"
     }
 }
