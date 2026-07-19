@@ -19,7 +19,7 @@ CAPABILITIES = {
     "design": ["OpenDesign", "Figma"],
     "video": ["HeyGen", "VEED"],
     "automation": ["Make", "n8n"],
-    "crm": ["HubSpot"]
+    "crm": ["Notion"]  # HubSpot unavailable - using Notion as CRM
 }
 
 
