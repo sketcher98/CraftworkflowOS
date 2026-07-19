@@ -745,7 +745,7 @@ def rule_matches(rule: str, objective: str, context: Optional[RuntimeContext]) -
     elif rule == "financial":
         return any(kw in objective_lower for kw in ["financial", "margin", "pricing", "profit", "revenue"])
     elif rule == "statistical":
-        return any(kw in objective_lower for kw in ["statistical", "analysis", "trend", "forecast"])
+        return any(kw in objective_lower for kw in ["statistical", "trend", "forecast", "regression", "correlation"])
     elif rule == "code_analysis":
         return any(kw in objective_lower for kw in ["code review", "analyze code", "bug", "performance"])
     elif rule == "fast":
@@ -792,7 +792,13 @@ def rule_matches(rule: str, objective: str, context: Optional[RuntimeContext]) -
         return any(kw in objective_lower for kw in ["notion", "wiki", "knowledge", "documentation"])
     elif rule == "conversion":
         return any(kw in objective_lower for kw in ["convert", "pdf", "pandoc", "format"])
-    
+    elif rule == "cost_optimized":
+        return any(kw in objective_lower for kw in ["cost", "cheap", "budget", "economical", "optimize cost", "cost optimized", "cost-effective"])
+    elif rule == "low_latency":
+        return any(kw in objective_lower for kw in ["fast", "quick", "low latency", "speed", "realtime"])
+    elif rule == "reasoning":
+        return any(kw in objective_lower for kw in ["reasoning", "think", "logic", "complex reasoning", "nemotron"])
+
     return False
 
 
