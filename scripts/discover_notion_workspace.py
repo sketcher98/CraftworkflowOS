@@ -1,19 +1,15 @@
 #!/usr/bin/env python3
 """
-Notion Workspace Discovery Script (Composio-first, Direct API fallback)
+Notion Workspace Discovery Script (Composio-first)
 
-Discovers all existing pages and databases in the CraftedWorkflows Notion workspace.
-Prefers Composio tool abstraction; falls back to direct Notion API if needed.
+Discovers all existing pages and databases in the CraftedWorkflows Notion workspace
+using the Composio tool abstraction layer.
 
 Usage:
-    # Composio mode (preferred)
-    export COMPOSIO_API_KEY=***
+    export COMPOSIO_API_KEY=ak_TuiWHgaUhPpcZ-A23xOi
     python scripts/discover_notion_workspace.py
 
-    # Direct API fallback mode
-    export NOTION_API_KEY=***
-    export NOTION_PARENT_PAGE_ID=xxx
-    python scripts/discover_notion_workspace.py
+Note: Requires Composio Notion toolkit to be connected in Composio dashboard.
 """
 
 import os
@@ -41,7 +37,7 @@ def detect_auth_mode() -> tuple[AuthMode, Dict]:
     else:
         raise RuntimeError(
             "No valid authentication found.\n"
-            "Option 1 (Composio): export COMPOSIO_API_KEY=***\n"
+            "Option 1 (Composio): export COMPOSIO_API_KEY=ak_TuiWHgaUhPpcZ-A23xOi\n"
             "Option 2 (Direct API): export NOTION_API_KEY=*** && export NOTION_PARENT_PAGE_ID=xxx"
         )
 
@@ -49,25 +45,36 @@ def detect_auth_mode() -> tuple[AuthMode, Dict]:
 async def discover_via_composio(api_key: str) -> Dict:
     """Discover workspace via Composio tool abstraction."""
     try:
-        from composio import Composio
+        from composio_client import Composio
     except ImportError:
-        raise RuntimeError("composio package not installed. Install: pip install composio-core")
+        raise RuntimeError("composio-client package not installed. Install: pip install composio-client")
     
     client = Composio(api_key=api_key)
-    tool_name = "notion"
+    tool_name = "notion"  # Notion toolkit slug in Composio
     
     async def execute_action(action: str, params: Dict) -> Any:
-        result = await client.tools.execute(
-            tool_name=tool_name,
-            action=action,
-            params=params,
-            entity_id="default"
+        """Execute a Notion action via Composio tool router."""
+        # Use the tool router session to execute actions
+        # First, we need to create a session or use an existing one
+        # For discovery, we'll use the session.execute method
+        
+        # Create a session with Notion toolkit enabled
+        session = client.tool_router.session.create(
+            user_id="discovery_user",
+            toolkits={"notion": {"enable": True}},
+        )
+        
+        # Execute the action
+        result = client.tool_router.session.execute(
+            session_id=session.session_id,
+            tool_slug=f"NOTION_{action.upper()}",
+            arguments=params
         )
         return result
     
     # Search for accessible content
     print("1. Searching via Composio...")
-    search_result = await execute_action("search", {"query": ""})
+    search_result = await execute_action("SEARCH", {"query": ""})
     all_results = search_result.get("results", []) if isinstance(search_result, dict) else []
     print(f"   Found {len(all_results)} total results")
     
@@ -78,7 +85,7 @@ async def discover_via_composio(api_key: str) -> Dict:
         if result.get("object") == "database":
             db_id = result["id"]
             try:
-                db_data = await execute_action("get_database", {"database_id": db_id})
+                db_data = await execute_action("GET_DATABASE", {"database_id": db_id})
                 title = extract_title(db_data)
                 databases.append({
                     "id": db_id,
@@ -207,7 +214,7 @@ def extract_title(obj: Dict) -> str:
 
 async def main():
     print("=" * 60)
-    print("NOTION WORKSPACE DISCOVERY")
+    print("NOTION WORKSPACE DISCOVERY (Composio-first)")
     print("=" * 60)
     
     # Detect auth mode
@@ -260,7 +267,6 @@ async def main():
     
     # Save to file for analysis
     output = {
-        "parent_page": {"title": "Discovered"} if mode == AuthMode.COMPOSIO else {},
         "databases": databases,
         "pages": pages,
         "discovery_mode": mode_used,
