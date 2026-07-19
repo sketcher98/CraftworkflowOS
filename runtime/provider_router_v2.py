@@ -221,17 +221,17 @@ PROVIDER_REGISTRY: Dict[ProviderName, ProviderConfig] = {
         fallback_priority=3
     ),
     ProviderName.HUBSPOT: ProviderConfig(
-        capabilities=[CapabilityName.CRM],
+        capabilities=[],  # DISABLED - Legacy FyreStrokeDigital account, DO NOT USE
         model="hubspot-api",
         endpoint="https://api.hubapi.com",
         auth_env="HUBSPOT_API_KEY",
         cost_per_1k_tokens={"input": 0.0, "output": 0.0},
         max_context=0,
         avg_latency_ms=300,
-        reliability_score=0.98,
+        reliability_score=0.0,  # Unreliable - disabled
         rate_limit_rpm=100,
         health_endpoint="https://api.hubapi.com/health",
-        fallback_priority=1
+        fallback_priority=99  # Lowest priority
     ),
     ProviderName.PIPEDRIVE: ProviderConfig(
         capabilities=[CapabilityName.CRM],
@@ -767,7 +767,7 @@ def rule_matches(rule: str, objective: str, context: Optional[RuntimeContext]) -
     elif rule == "workflow":
         return any(kw in objective_lower for kw in ["workflow", "automation", "scenario", "make.com"])
     elif rule == "enterprise":
-        return any(kw in objective_lower for kw in ["enterprise", "hubspot", "crm"])
+        return any(kw in objective_lower for kw in ["enterprise", "hubspot"])
     elif rule == "sales":
         return any(kw in objective_lower for kw in ["sales", "pipedrive", "deal"])
     elif rule == "custom":
@@ -798,8 +798,10 @@ def rule_matches(rule: str, objective: str, context: Optional[RuntimeContext]) -
         return any(kw in objective_lower for kw in ["fast", "quick", "low latency", "speed", "realtime"])
     elif rule == "reasoning":
         return any(kw in objective_lower for kw in ["reasoning", "think", "logic", "complex reasoning", "nemotron"])
-
-    return False
+    elif rule == "primary":
+        return any(kw in objective_lower for kw in ["create", "add", "new", "insert", "search", "find", "query", "get", "read", "update", "modify", "edit", "change", "delete", "remove", "list", "all"])
+    elif rule == "fallback":
+        return any(kw in objective_lower for kw in ["fallback", "backup", "alternative", "airtable"])
 
 
 def calculate_score(provider: ProviderName, context: Optional[RuntimeContext] = None) -> float:
