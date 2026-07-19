@@ -175,7 +175,7 @@ Architect winning deal structures for complex opportunities — designing pricin
 ```yaml
 capabilities:
   - name: "analysis"
-    description: "Design deal structure, price within bands, assess margin, evaluate concessions"
+    description: "Design deal structure, price within bands, assess margin, evaluate concessions, simulate negotiation rounds, test walk-away scenarios"
     provider_preference: "gpt"
     required_context:
       - "working_memory.commercial.gap_analysis"
@@ -184,6 +184,10 @@ capabilities:
       - "context.finance.margins"
       - "context.legal.approved_terms"
       - "preferences.deal_strategy.win_patterns"
+      - "negotiation_state"
+      - "context.playbooks.sales.objection_handling"
+      - "context.playbooks.sales.roleplay_scenarios"
+      - "preferences.deal_strategy.objection_responses"
     output_format: "json"
     memory_write: "working_memory.commercial.deal_structure"
 
@@ -198,17 +202,6 @@ capabilities:
       - "context.company.value_proposition"
     output_format: "markdown"
     memory_write: "memory/working/commercial/deals/"
-
-  - name: "analysis"
-    description: "Simulate negotiation rounds, evaluate concession impact, test walk-away scenarios"
-    provider_preference: "gpt"
-    required_context:
-      - "negotiation_state"
-      - "context.playbooks.sales.objection_handling"
-      - "context.playbooks.sales.roleplay_scenarios"
-      - "preferences.deal_strategy.objection_responses"
-    output_format: "json"
-    memory_write: "working_memory.commercial.negotiation_state"
 ```
 
 ---

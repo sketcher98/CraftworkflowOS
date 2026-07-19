@@ -22,10 +22,16 @@ Execute high-quality, signal-based outreach that starts valuable conversations �
 **Owns:**
 - Executing daily outreach queue from Prospecting Specialist
 - Personalizing DMs using prospect summaries and buying signals
-- Selecting and executing the correct DM flow (1-5) per prospect
+- Executing the correct DM flow (1-5) per prospect (flow pre-assigned by Prospecting)
 - Managing follow-up sequences per flow specification
 - Tracking all outreach activity and responses in CRM/memory
 - Maintaining outreach quality standards (no generic templates)
+
+**Does NOT Own:**
+- Prospect selection or prioritization (Prospecting Specialist owns queue building)
+- Lead scoring or tier assignment (Prospecting Specialist owns scoring)
+- Channel selection (Prospecting Specialist assigns channel per prospect)
+- Queue management (add/promote/demote/archive — Prospecting Specialist)
 
 **Supports:**
 - Lead Intelligence (reply patterns → angle effectiveness)

@@ -26,6 +26,12 @@ Convert Lead Intelligence research into daily action by selecting the highest-le
 - Daily outreach targets and quota management
 - Prospect queue management (add, promote, demote, archive)
 - Channel selection per prospect (LinkedIn vs X vs email)
+- DM flow pre-assignment per prospect (based on tier, relationship, signals)
+
+**Does NOT Own:**
+- DM execution or personalization (Outreach Specialist owns execution)
+- Follow-up sequence management (Outreach Specialist owns follow-ups)
+- Reply classification or conversation handling (Outreach Specialist owns replies)
 
 **Supports:**
 - Outreach Specialist (ordered, prioritized queue with context)
