@@ -5,16 +5,19 @@
 **Sources:** 
 - SOURCE A: 04_Knowledge (CraftworkflowOS primary)
 - SOURCE B: agency-agents/marketing (reference)
+- SOURCE C: Current 03_Departments/Marketing (existing structure)
 
 ---
 
 ## Executive Summary
 
-SOURCE A (04_Knowledge) has strong strategic foundations: Content Pillars (Goat Farmer), Target Market/ICP, Value Proposition, and Positioning. But **zero employees** exist in the Marketing department directory.
+SOURCE A (04_Knowledge) has **strong strategic foundations** for Marketing: Content Pillars (Goat Farmer), Target Market/ICP, Value Proposition, Positioning, and shared Sales playbooks. But **zero employees** exist in the Marketing department directory.
 
-SOURCE B (agency-agents) has **30+ marketing specialists** but they're generic agency roles (SEO, TikTok, WeChat, Baidu, etc.) — many irrelevant for CraftedWorkflows' specific go-to-market (LinkedIn/X, founder branding, authority, email nurture).
+SOURCE B (agency-agents/marketing) has **30+ marketing specialists** but they're **generic agency roles** (SEO, TikTok, WeChat, Baidu, etc.) — many irrelevant for CraftedWorkflows' specific go-to-market (LinkedIn/X, founder branding, authority, email nurture).
 
-**The Gap:** No Marketing department exists in CraftworkflowOS. We need to build one from scratch using SOURCE A's strategy + SOURCE B's specialist depth, adapted to our specific GTM.
+SOURCE C (Current 03_Departments/Marketing) has a **Marketing Director** and **7 employee directories created** but **all profiles are empty** (directories exist, no Profile.md files).
+
+**The Gap:** No operational Marketing department exists. Need to build one from scratch using SOURCE A's strategy + SOURCE B's specialist depth, adapted to our specific GTM.
 
 ---
 
@@ -86,10 +89,9 @@ Reports to COO. Owns: qualified demand, authority, conversion support.
 | 2 | **Content Strategist** | All (calendar, repurposing) | Content_Pillars, DM_Flows, Value_Prop |
 | 3 | **Email Nurture Specialist** | Email | Target_Market, Pre_Call_Sequence, Objection_Handling |
 | 4 | **Lead Magnet Designer** | All (conversion) | Target_Market, Pricing_Packages, Value_Prop |
-| 4 | **Authority & PR Builder** | Podcasts, guest posts, speaking | Origin_Story, Core_Philosophy, Value_Prop |
-| 5 | **Content Repurposing Operator** | LinkedIn, X, Reels, Shorts | Content_Pillars, DM_Flows |
-| 6 | **Sales Enablement Content** | Commercial support | Case_Studies, Objection_Handling, Roleplay_Scenarios |
-| 7 | **Analytics & Attribution** | All (measurement) | Pipeline health, content → revenue |
+| 5 | **Authority & PR Builder** | Podcasts, guest posts, speaking | Origin_Story, Core_Philosophy, Value_Prop |
+| 6 | **Content Repurposing Operator** | LinkedIn, X, Reels, Shorts | Content_Pillars, DM_Flows |
+| 7 | **Sales Enablement Content** | Commercial support | Case_Studies, Objection_Handling, Roleplay_Scenarios |
 
 ---
 
