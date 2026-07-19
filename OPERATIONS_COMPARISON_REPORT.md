@@ -1,8 +1,8 @@
 # Operations Department Comparison Report
 
-**Prepared by:** Chief Organization Architect  
-**Date:** 2026-07-19  
-**Sources:** 
+**Prepared by:** Chief Organization Architect
+**Date:** 2026-07-19
+**Sources:**
 - SOURCE A: 04_Knowledge (CraftworkflowOS primary)
 - SOURCE B: agency-agents (reference only)
 - SOURCE C: Current 03_Departments (existing structure)
@@ -97,12 +97,12 @@ Reports to COO. Owns: SOPs, Systems, Documentation, Automation, Internal Operati
 
 | # | Role | Primary Focus | Improves Departments |
 |---|------|---------------|---------------------|
-| 1 | **Planning & Rhythm Coordinator** | Quarterly planning, OKR cascade, meeting rhythms, decision log | All (6+) |
+| 1 | **Planning Rhythm Coordinator** | Quarterly planning, OKR cascade, meeting rhythms, decision log | All (6+) |
 | 2 | **SOP & Documentation Librarian** | SOP registry, doc standards, versioning, review cycles | All (6+) |
-| 3 | **Automation & Systems Coordinator** | Automation intake, prioritization, ROI tracking, internal tooling | Engineering, Commercial, Marketing, Operations |
-| 4 | **Quality & Reliability Engineer** | Quality gates, checklists, incident response, runbooks, uptime | Engineering, Delivery, Commercial, Operations |
-| 5 | **Internal Communications & Rhythm Manager** | Meeting rhythms, decision log, escalation paths, employee onboarding | All (6+) |
-| 6 | **Automation & Internal Tools Product Manager** | Automation intake, prioritization, ROI, internal tool adoption | Engineering, Commercial, Marketing, Operations |
+| 3 | **Automation & Systems Coordinator** | Automation intake, prioritization, ROI tracking, platform | Engineering, Commercial, Marketing, Operations |
+| 4 | **Quality & Reliability Engineer** | Quality gates, SLIs/SLOs, error budgets, incident response | Engineering, Delivery, Commercial, Operations |
+| 5 | **Internal Communications & Rhythm Manager** | Meeting rhythms, decision log, escalation paths, onboarding | All (6+) |
+| 6 | **Automation & Internal Tools PM** | Tool intake, evaluation, adoption, integration, budget | Engineering, Commercial, Marketing, Operations |
 
 ---
 
@@ -110,7 +110,7 @@ Reports to COO. Owns: SOPs, Systems, Documentation, Automation, Internal Operati
 
 | Phase | Employees | Rationale |
 |-------|-----------|-----------|
-| **1** | Planning & Rhythm Coordinator, SOP & Documentation Librarian | Foundation: rhythms + knowledge governance |
+| **1** | Planning Rhythm Coordinator, SOP & Documentation Librarian | Foundation: rhythms + knowledge governance |
 | **2** | Quality & Reliability Engineer, Automation & Systems Coordinator | Reliability + automation coordination |
 | **3** | Internal Communications & Rhythm Manager, Automation & Internal Tools PM | Communication rhythms + tool adoption |
 
@@ -152,7 +152,7 @@ CAPABILITIES = {
 
 ---
 
-## 8. Next Steps
+## 9. Next Steps
 
 1. **Create comparison report** (this document) → commit
 2. **Build 6 Operations employees** using EMPLOYEE_TEMPLATE
