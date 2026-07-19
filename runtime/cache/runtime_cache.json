@@ -58,7 +58,7 @@
         },
         "Marketing": {
             "name": "Marketing",
-            "director": "# Marketing Director\n\n## Mission\n\nGenerate consistent attention, trust, and demand.\n\n## Owns\n\n- Content\n- Research\n- Social Media\n- Email Marketing\n- SEO\n- Brand\n\n## Reports To\n\nHermes COO"
+            "director": "# Marketing Director\n\n---\n\n## Mission\n\nGenerate consistent attention, trust, and demand.\n\n## Owns\n\n- Founder Brand Architect\n- Content Strategist\n- Email Nurture Specialist\n- Lead Magnet Designer\n- Authority PR Builder\n- Content Repurposing Operator\n- Sales Enablement Content\n\n## Reports To\n\nHermes COO\n\n## Department KPIs\n\n- Qualified conversations (Marketing \u2192 Commercial handoff): \u2265 15/month\n- Inbound DM quality (ICP %): \u2265 40%\n- Content-to-pipeline attribution: \u2265 $25k ARR/month\n- Founder brand authority: Speaking/podcast \u2265 6/quarter\n- Email nurture conversion: Audit booking \u2265 15%\n\n## Decision Order\n\nWhen given an objective:\n1. Review Commercial pipeline needs\n2. Align content strategy to pipeline gaps\n3. Prioritize employee assignments\n4. Review outputs\n5. Present executive recommendation\n\n## Executive Philosophy\n\nMarketing exists to make Commercial more effective.\n\nAttention without qualification is noise.\nAuthority without proof is arrogance.\nContent without conversion is hobby.\n\nEvery asset must answer: \"Does this help Commercial close better deals faster?\""
         },
         "Operations": {
             "name": "Operations",
@@ -84,8 +84,8 @@
     },
     "archive": {},
     "knowledge_base": {},
-    "saved_at": "2026-07-19T11:35:22.951995",
-    "last_refresh": "2026-07-19T11:35:22.947518",
+    "saved_at": "2026-07-19T12:56:07.349791",
+    "last_refresh": "2026-07-19T12:56:07.345540",
     "working_memory": {
         "current_objective": "Test",
         "active_project": "Proj",
