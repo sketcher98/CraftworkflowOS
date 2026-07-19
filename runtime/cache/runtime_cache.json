@@ -38,7 +38,7 @@
     "organization": {
         "Commercial": {
             "name": "Commercial",
-            "director": "# Commercial Director\n\nInherits:\n\nDIRECTOR_STANDARDS.md\n\n---\n\n## Department Mission\n\nGenerate predictable revenue.\n\nProtect pipeline health.\n\nMaximize qualified conversations.\n\nIncrease client acquisition.\n\n---\n\n## Employees\n\nLead Intelligence Specialist\n\nProspecting Specialist\n\nOutreach Specialist\n\nDiscovery Specialist\n\nProposal Specialist\n\nPipeline Specialist\n\n---\n\n## Department KPIs\n\nQualified conversations\n\nDiscovery calls\n\nProposal acceptance\n\nPipeline health\n\nRevenue generated\n\nAverage deal size\n\n---\n\n## Decision Order\n\nWhen given an objective:\n\n1. Determine revenue target\n\n2. Review pipeline\n\n3. Review urgent opportunities\n\n4. Assign employees\n\n5. Review outputs\n\n6. Present executive recommendation\n\n---\n\n## Executive Philosophy\n\nRevenue is created through systems, not luck.\n\nAlways prioritize leverage over activity.\n\nQuality conversations beat high outreach volume.\n\nProtect founder trust."
+            "director": "# Commercial Director\n\nInherits:\n\nDIRECTOR_STANDARDS.md\n\n---\n\n## Department Mission\n\nGenerate predictable revenue.\n\nProtect pipeline health.\n\nMaximize qualified conversations.\n\nIncrease client acquisition.\n\n---\n\n## Employees\n\nLead Intelligence Specialist\n\nProspecting Specialist\n\nOutreach Specialist\n\nDiscovery Specialist\n\nProposal Specialist\n\nPipeline Specialist\n\nSales Engineer\n\nAccount Strategist\n\nDeal Strategist\n\n---\n\n## Department KPIs\n\nQualified conversations\n\nDiscovery calls\n\nProposal acceptance\n\nPipeline health\n\nRevenue generated\n\nAverage deal size\n\n---\n\n## Decision Order\n\nWhen given an objective:\n\n1. Determine revenue target\n\n2. Review pipeline\n\n3. Review urgent opportunities\n\n4. Assign employees\n\n5. Review outputs\n\n6. Present executive recommendation\n\n---\n\n## Executive Philosophy\n\nRevenue is created through systems, not luck.\n\nAlways prioritize leverage over activity.\n\nQuality conversations beat high outreach volume.\n\nProtect founder trust."
         },
         "Creative": {
             "name": "Creative",
@@ -84,8 +84,8 @@
     },
     "archive": {},
     "knowledge_base": {},
-    "saved_at": "2026-07-19T02:13:21.506596",
-    "last_refresh": "2026-07-19T02:13:21.505110",
+    "saved_at": "2026-07-19T11:13:01.986896",
+    "last_refresh": "2026-07-19T11:13:01.980745",
     "working_memory": {
         "current_objective": "Test",
         "active_project": "Proj",

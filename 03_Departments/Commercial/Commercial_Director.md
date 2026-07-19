@@ -32,6 +32,12 @@ Proposal Specialist
 
 Pipeline Specialist
 
+Sales Engineer
+
+Account Strategist
+
+Deal Strategist
+
 ---
 
 ## Department KPIs

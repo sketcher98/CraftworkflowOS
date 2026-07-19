@@ -14,6 +14,7 @@ from runtime.provider_registry import list_capabilities, get_providers_for_capab
 CAPABILITIES = {
     "research": ["Perplexity", "Browser"],
     "writing": ["GPT-4o"],
+    "analysis": ["GPT-4o"],
     "coding": ["OpenClaw", "Codex"],
     "design": ["OpenDesign", "Figma"],
     "video": ["HeyGen", "VEED"],
