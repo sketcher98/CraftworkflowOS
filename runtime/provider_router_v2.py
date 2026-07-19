@@ -103,6 +103,32 @@ PROVIDER_REGISTRY: Dict[ProviderName, ProviderConfig] = {
         health_endpoint="https://integrate.api.nvidia.com/health",
         fallback_priority=4
     ),
+    ProviderName.GROQ_LLAMA_31_70B: ProviderConfig(
+        capabilities=[CapabilityName.WRITING, CapabilityName.ANALYSIS, CapabilityName.CODING],
+        model="llama-3.1-70b-versatile",
+        endpoint="https://api.groq.com/openai/v1/chat/completions",
+        auth_env="GROQ_API_KEY",
+        cost_per_1k_tokens={"input": 0.00059, "output": 0.00079},
+        max_context=131072,
+        avg_latency_ms=800,
+        reliability_score=0.93,
+        rate_limit_rpm=30,
+        health_endpoint="https://api.groq.com/health",
+        fallback_priority=3
+    ),
+    ProviderName.OPENROUTER: ProviderConfig(
+        capabilities=[CapabilityName.WRITING, CapabilityName.ANALYSIS, CapabilityName.CODING],
+        model="openrouter/auto",
+        endpoint="https://openrouter.ai/api/v1/chat/completions",
+        auth_env="OPENROUTER_API_KEY",
+        cost_per_1k_tokens={"input": 0.001, "output": 0.002},
+        max_context=128000,
+        avg_latency_ms=2000,
+        reliability_score=0.92,
+        rate_limit_rpm=100,
+        health_endpoint="https://openrouter.ai/health",
+        fallback_priority=3
+    ),
     ProviderName.FIGMA: ProviderConfig(
         capabilities=[CapabilityName.DESIGN],
         model="figma-api",
@@ -338,7 +364,7 @@ PROVIDER_REGISTRY: Dict[ProviderName, ProviderConfig] = {
         fallback_priority=1
     ),
     ProviderName.NOTION: ProviderConfig(
-        capabilities=[CapabilityName.DOCUMENT],
+        capabilities=[CapabilityName.DOCUMENT, CapabilityName.CRM],
         model="notion-api",
         endpoint="https://api.notion.com/v1",
         auth_env="NOTION_API_KEY",
@@ -471,17 +497,22 @@ ROUTING_RULES: Dict[CapabilityName, Dict[str, ProviderName]] = {
         "outreach": ProviderName.GPT_4O,
         "proposal": ProviderName.GPT_4O,
         "technical_docs": ProviderName.CLAUDE_35_SONNET,
-        "code": ProviderName.GROQ_LLAMA_31_70B
+        "code": ProviderName.GROQ_LLAMA_31_70B,
+        "cost_optimized": ProviderName.OPENROUTER,
+        "low_latency": ProviderName.GROQ_LLAMA_31_70B
     },
     CapabilityName.ANALYSIS: {
         "financial": ProviderName.CLAUDE_35_SONNET,
         "statistical": ProviderName.GPT_4O,
-        "code_analysis": ProviderName.GROQ_LLAMA_31_70B
+        "code_analysis": ProviderName.GROQ_LLAMA_31_70B,
+        "cost_optimized": ProviderName.OPENROUTER,
+        "reasoning": ProviderName.NVIDIA_NIM
     },
     CapabilityName.CODING: {
         "fast": ProviderName.GROQ_LLAMA_31_70B,
         "complex": ProviderName.CLAUDE_35_SONNET,
-        "review": ProviderName.GPT_4O
+        "review": ProviderName.GPT_4O,
+        "cost_optimized": ProviderName.OPENROUTER
     },
     CapabilityName.DESIGN: {
         "ui": ProviderName.FIGMA,
@@ -498,9 +529,8 @@ ROUTING_RULES: Dict[CapabilityName, Dict[str, ProviderName]] = {
         "simple": ProviderName.ZAPIER
     },
     CapabilityName.CRM: {
-        "enterprise": ProviderName.HUBSPOT,
-        "sales": ProviderName.PIPEDRIVE,
-        "custom": ProviderName.AIRTABLE
+        "primary": ProviderName.NOTION,
+        "fallback": ProviderName.AIRTABLE
     },
     CapabilityName.EMAIL: {
         "transactional": ProviderName.GMAIL,

@@ -43,6 +43,7 @@ class ProviderName(str, Enum):
     CLAUDE_35_SONNET = "Claude-3.5-Sonnet"
     GROQ_LLAMA_31_70B = "Groq-Llama-3.1-70B"
     NVIDIA_NIM = "NVIDIA-NIM"
+    OPENROUTER = "OpenRouter"
     FIGMA = "Figma"
     PREMIERE = "Premiere"
     HEYGEN = "HeyGen"
