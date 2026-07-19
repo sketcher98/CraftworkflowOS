@@ -149,17 +149,54 @@ Four content pillars for Goat Farmer edition.
 
 ---
 
-## Daily Content Rhythm
+## Content Hooks (Templates)
 
-| Day | Platform | Pillar | Format |
-|-----|----------|--------|--------|
-| Mon | Twitter | Belief | Polarized take |
-| Mon | LinkedIn | Process | How you think |
-| Tue | Twitter | Parable | Goat farmer analogy |
-| Wed | Twitter | Belief | Polarized take |
-| Thu | LinkedIn | Proof | Case study |
-| Fri | Twitter | Parable | Anti-hustle |
-| Weekend | LinkedIn | Belief/Process | Long-form |
+### Belief Hooks
+- "Hiring is a tax on broken systems."
+- "If your business needs daily feeding, you don't own it."
+- "Busy founders don't need discipline. They need infrastructure."
+
+### Parable Hooks
+- "A farm that collapses when the owner leaves isn't scalable."
+- "Adding people before systems is like buying more goats with no fence."
+- "Automation isn't magic — it's maintenance done once."
+
+### Proof Hooks
+- Before → After workflows
+- Time saved
+- Bottlenecks removed
+- Founder stepping away
+
+### Process Hooks
+- How you diagnose a business
+- What you look for first
+- Why you reject some clients
+- How you decide what to automate
+
+---
+
+## Content Rules
+
+### Every Post = 3 Parts
+1. **Old belief** (what they currently believe)
+2. **New belief** (what you want them to believe)
+3. **One CTA** (single, clear action)
+
+### Never
+- Entertain
+- Motivate
+- Educate for entertainment
+
+### Always
+- Kill an old belief
+- Install a new belief
+- Demonstrate authority
+- Signal who you work with (and who you don't)
+
+### The Invisible CTA Rule
+> Your content should never scream "Book a call!"
+> 
+> Instead it should whisper: "If this makes sense to you, you're my person."
 
 ---
 
@@ -189,24 +226,382 @@ Four content pillars for Goat Farmer edition.
 
 ---
 
-## Anti-Patterns (What NOT to Do)
+## Content Rules
 
-| ❌ Don't | ✅ Do |
-|----------|-------|
-| Sell automation | Sell freedom from manual scale |
-| Talk tools (Zapier, Make) | Talk outcomes (time, leverage) |
-| Pitch features | Pitch identity change |
-| "Book a call!" | "If this makes sense, you're my person" |
-| Talk tools before outcomes | Outcomes first, tools never |
-| Entertain | Transfer belief |
-| Motivate | Transfer belief |
+### Every Post = 3 Parts
+1. **Old belief** (what they currently believe)
+2. **New belief** (what you want them to believe)
+3. **One CTA** (single, clear action)
 
----
+### Never
+- Entertain
+- Motivate
+- Educate for entertainment
 
-## The Invisible CTA Rule
+### Always
+- Kill an old belief
+- Install a new belief
+- Demonstrate authority
+- Signal who you work with (and who you don't)
 
-> Your content should never scream: "Book a call!"
+### The Invisible CTA Rule
+> Your content should never scream "Book a call!"
 > 
 > Instead it should whisper: "If this makes sense to you, you're my person."
 
-That's how premium buyers self-select.
+---
+
+## Content Hooks (Templates)
+
+### Belief Hooks
+- "Hiring is a tax on broken systems."
+- "If your business needs daily feeding, you don't own it."
+- "Busy founders don't need discipline. They need infrastructure."
+
+### Parable Hooks
+- "A farm that collapses when the owner leaves isn't scalable."
+- "Adding people before systems is like buying more goats with no fence."
+- "Automation isn't magic — it's maintenance done once."
+
+### Proof Hooks
+- Before → After workflows
+- Time saved
+- Bottlenecks removed
+- Founder stepping away
+
+### Process Hooks
+- How you diagnose a business
+- What you look for first
+- Why you reject some clients
+- How you decide what to automate
+
+---
+
+## Content Rules
+
+### Every Post = 3 Parts
+1. **Old belief** (what they currently believe)
+2. **New belief** (what you want them to believe)
+3. **One CTA** (single, clear action)
+
+### Never
+- Entertain
+- Motivate
+- Educate for entertainment
+
+### Always
+- Kill an old belief
+- Install a new belief
+- Demonstrate authority
+- Signal who you work with (and who you don't)
+
+### The Invisible CTA Rule
+> Your content should never scream "Book a call!"
+> 
+> Instead it should whisper: "If this makes sense to you, you're my person."
+
+---
+
+## Content Hooks (Templates)
+
+### Belief Hooks
+- "Hiring is a tax on broken systems."
+- "If your business needs daily feeding, you don't own it."
+- "Busy founders don't need discipline. They need infrastructure."
+
+### Parable Hooks
+- "A farm that collapses when the owner leaves isn't scalable."
+- "Adding people before systems is like buying more goats with no fence."
+- "Automation isn't magic — it's maintenance done once."
+
+### Proof Hooks
+- Before → After workflows
+- Time saved
+- Bottlenecks removed
+- Founder stepping away
+
+### Process Hooks
+- How you diagnose a business
+- What you look for first
+- Why you reject some clients
+- How you decide what to automate
+
+---
+
+## Content Rules
+
+### Every Post = 3 Parts
+1. **Old belief** (what they currently believe)
+2. **New belief** (what you want them to believe)
+3. **One CTA** (single, clear action)
+
+### Never
+- Entertain
+- Motivate
+- Educate for entertainment
+
+### Always
+- Kill an old belief
+- Install a new belief
+- Demonstrate authority
+- Signal who you work with (and who you don't)
+
+### The Invisible CTA Rule
+> Your content should never scream "Book a call!"
+> 
+> Instead it should whisper: "If this makes sense to you, you're my person."
+
+---
+
+## Content Hooks (Templates)
+
+### Belief Hooks
+- "Hiring is a tax on broken systems."
+- "If your business needs daily feeding, you don't own it."
+- "Busy founders don't need discipline. They need infrastructure."
+
+### Parable Hooks
+- "A farm that collapses when the owner leaves isn't scalable."
+- "Adding people before systems is like buying more goats with no fence."
+- "Automation isn't magic — it's maintenance done once."
+
+### Proof Hooks
+- Before → After workflows
+- Time saved
+- Bottlenecks removed
+- Founder stepping away
+
+### Process Hooks
+- How you diagnose a business
+- What you look for first
+- Why you reject some clients
+- How you decide what to automate
+
+---
+
+## Content Rules
+
+### Every Post = 3 Parts
+1. **Old belief** (what they currently believe)
+2. **New belief** (what you want them to believe)
+3. **One CTA** (single, clear action)
+
+### Never
+- Entertain
+- Motivate
+- Educate for entertainment
+
+### Always
+- Kill an old belief
+- Install a new belief
+- Demonstrate authority
+- Signal who you work with (and who you don't)
+
+### The Invisible CTA Rule
+> Your content should never scream "Book a call!"
+> 
+> Instead it should whisper: "If this makes sense to you, you're my person."
+
+---
+
+## Content Hooks (Templates)
+
+### Belief Hooks
+- "Hiring is a tax on broken systems."
+- "If your business needs daily feeding, you don't own it."
+- "Busy founders don't need discipline. They need infrastructure."
+
+### Parable Hooks
+- "A farm that collapses when the owner leaves isn't scalable."
+- "Adding people before systems is like buying more goats with no fence."
+- "Automation isn't magic — it's maintenance done once."
+
+### Proof Hooks
+- Before → After workflows
+- Time saved
+- Bottlenecks removed
+- Founder stepping away
+
+### Process Hooks
+- How you diagnose a business
+- What you look for first
+- Why you reject some clients
+- How you decide what to automate
+
+---
+
+## Content Rules
+
+### Every Post = 3 Parts
+1. **Old belief** (what they currently believe)
+2. **New belief** (what you want them to believe)
+3. **One CTA** (single, clear action)
+
+### Never
+- Entertain
+- Motivate
+- Educate for entertainment
+
+### Always
+- Kill an old belief
+- Install a new belief
+- Demonstrate authority
+- Signal who you work with (and who you don't)
+
+### The Invisible CTA Rule
+> Your content should never scream "Book a call!"
+> 
+> Instead it should whisper: "If this makes sense to you, you're my person."
+
+---
+
+## Content Hooks (Templates)
+
+### Belief Hooks
+- "Hiring is a tax on broken systems."
+- "If your business needs daily feeding, you don't own it."
+- "Busy founders don't need discipline. They need infrastructure."
+
+### Parable Hooks
+- "A farm that collapses when the owner leaves isn't scalable."
+- "Adding people before systems is like buying more goats with no fence."
+- "Automation isn't magic — it's maintenance done once."
+
+### Proof Hooks
+- Before → After workflows
+- Time saved
+- Bottlenecks removed
+- Founder stepping away
+
+### Process Hooks
+- How you diagnose a business
+- What you look for first
+- Why you reject some clients
+- How you decide what to automate
+
+---
+
+## Content Rules
+
+### Every Post = 3 Parts
+1. **Old belief** (what they currently believe)
+2. **New belief** (what you want them to believe)
+3. **One CTA** (single, clear action)
+
+### Never
+- Entertain
+- Motivate
+- Educate for entertainment
+
+### Always
+- Kill an old belief
+- Install a new belief
+- Demonstrate authority
+- Signal who you work with (and who you don't)
+
+### The Invisible CTA Rule
+> Your content should never scream "Book a call!"
+> 
+> Instead it should whisper: "If this makes sense to you, you're my person."
+
+---
+
+## Content Hooks (Templates)
+
+### Belief Hooks
+- "Hiring is a tax on broken systems."
+- "If your business needs daily feeding, you don't own it."
+- "Busy founders don't need discipline. They need infrastructure."
+
+### Parable Hooks
+- "A farm that collapses when the owner leaves isn't scalable."
+- "Adding people before systems is like buying more goats with no fence."
+- "Automation isn't magic — it's maintenance done once."
+
+### Proof Hooks
+- Before → After workflows
+- Time saved
+- Bottlenecks removed
+- Founder stepping away
+
+### Process Hooks
+- How you diagnose a business
+- What you look for first
+- Why you reject some clients
+- How you decide what to automate
+
+---
+
+## Content Rules
+
+### Every Post = 3 Parts
+1. **Old belief** (what they currently believe)
+2. **New belief** (what you want them to believe)
+3. **One CTA** (single, clear action)
+
+### Never
+- Entertain
+- Motivate
+- Educate for entertainment
+
+### Always
+- Kill an old belief
+- Install a new belief
+- Demonstrate authority
+- Signal who you work with (and who you don't)
+
+### The Invisible CTA Rule
+> Your content should never scream "Book a call!"
+> 
+> Instead it should whisper: "If this makes sense to you, you're my person."
+
+---
+
+## Content Hooks (Templates)
+
+### Belief Hooks
+- "Hiring is a tax on broken systems."
+- "If your business needs daily feeding, you don't own it."
+- "Busy founders don't need discipline. They need infrastructure."
+
+### Parable Hooks
+- "A farm that collapses when the owner leaves isn't scalable."
+- "Adding people before systems is like buying more goats with no fence."
+- "Automation isn't magic — it's maintenance done once."
+
+### Proof Hooks
+- Before → After workflows
+- Time saved
+- Bottlenecks removed
+- Founder stepping away
+
+### Process Hooks
+- How you diagnose a business
+- What you look for first
+- Why you reject some clients
+- How you decide what to automate
+
+---
+
+## Content Rules
+
+### Every Post = 3 Parts
+1. **Old belief** (what they currently believe)
+2. **New belief** (what you want them to believe)
+3. **One CTA** (single, clear action)
+
+### Never
+- Entertain
+- Motivate
+- Educate for entertainment
+
+### Always
+- Kill an old belief
+- Install a new belief
+- Demonstrate authority
+- Signal who you work with (and who you don't)
+
+### The Invisible CTA Rule
+> Your content should never scream "Book a call!"
+> 
+> Instead it should whisper: "If this makes sense to you, you're my person."

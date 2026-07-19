@@ -1,18 +1,6 @@
 # 04_Knowledge — Knowledge Base
 
-The structured, searchable knowledge base for CraftedWorkflows.
-
----
-
-## Purpose
-
-This directory contains all codified, reusable knowledge for CraftedWorkflows. Unlike the inbox (raw capture) or memory (learned patterns), this is the **curated, version-controlled source of truth**.
-
-**Knowledge here should be:**
-- Curated (not raw)
-- Version-controlled (git history = audit trail)
-- Cross-referenced (linked, not duplicated)
-- Actionable (every doc should inform a decision)
+CraftedWorkflows structured knowledge base. All operational knowledge lives here.
 
 ---
 
@@ -20,146 +8,164 @@ This directory contains all codified, reusable knowledge for CraftedWorkflows. U
 
 ```
 04_Knowledge/
-├── Company/                    # Company identity & strategy
-│   ├── Core_Philosophy.md
-│   ├── Origin_Story.md
-│   ├── Value_Proposition.md
-│   └── Target_Market.md
-│
-├── Playbooks/                  # Operational playbooks (how we work)
-│   ├── README.md
+├── Company/                    # Company foundation
+│   ├── Core_Philosophy.md      # Mission, values, principles
+│   ├── Origin_Story.md         # Founder journey, epiphany
+│   ├── Value_Proposition.md    # Promise, differentiation
+│   ├── Target_Market.md        # ICP, personas, qualification
+│   └── README.md
+├── Playbooks/                  # Operational playbooks
 │   ├── Outreach/
-│   │   └── DM_Flows.md
+│   │   ├── DM_Flows.md              # 5 DM flows + follow-ups
+│   │   ├── Daily_Targeting_Playbook.md
+│   │   ├── Lead_Sourcing.md         # Where to find leads
+│   │   └── Lead_Qualification.md    # Scoring, qualification
 │   ├── Sales/
-│   │   ├── README.md
-│   │   ├── Sales_Call_Playbook.md
-│   │   ├── Pre_Call_Sequence.md
-│   │   ├── Objection_Handling.md
-│   │   └── Roleplay_Scenarios.md
+│   │   ├── Sales_Call_Playbook.md      # Complete call script
+│   │   ├── Pre_Call_Sequence.md        # 4-email sequence
+│   │   ├── Objection_Handling.md       # 8 objections + responses
+│   │   └── Roleplay_Scenarios.md       # 8 roleplay scenarios
 │   ├── Marketing/
-│   │   └── Content_Pillars.md
-│   ├── Sales/
-│   │   ├── Pre_Call_Sequence.md
-│   │   └── Objection_Handling.md
+│   │   └── Content_Pillars.md     # 4 pillars (Goat Farmer)
+│   ├── Outreach/
+│   ├── Operations/
+│   ├── Delivery/
 │   └── Finance/
-│       └── Pricing_Packages.md
-│
-├── SOPs/                       # Standard Operating Procedures
-│   └── (to be created)
-│
-├── Frameworks/                 # Strategic frameworks & mental models
-│   └── (to be created)
-│
+├── Offers/                     # Product/offer structures
+│   └── Pricing_Packages.md      # Jumpstart/Goldilocks/Visionary
+├── Research/                   # Market research, competitive intel
+│   └── README.md
 ├── Templates/                  # Reusable templates
-│   └── (to be created)
-│
-├── Offers/                     # Offer structures & pricing
-│   └── Pricing_Packages.md
-│
-├── Research/                   # Market & competitive research
-│   ├── README.md
-│   ├── Market_Intelligence/
-│   ├── Competitive_Intelligence/
-│   ├── Customer_Research/
-│   └── Technical_Research/
-│
-├── Case_Studies/               # Client success stories
-│   └── (to be created)
-│
-├── Prompts/                    # Reusable AI prompts
-│   └── (to be created)
-│
+├── SOPs/                       # Standard operating procedures
+├── Frameworks/                 # Strategic frameworks
+├── Prompts/                    # AI prompts
 ├── Competitive_Intelligence/   # Competitor analysis
-│   └── (to be created)
-│
-├── Market_Intelligence/        # Market trends & sizing
-│   └── (to be created)
-│
-├── Assets/                     # Static assets (logos, images)
-│   └── (to be created)
-│
+├── Market_Intelligence/        # Market trends, sizing
+├── Case_Studies/               # Client success stories
+├── Prompts/                    # AI prompts
+├── Skills/                     # Skill library
+├── Assets/                     # Static assets
+├── Inbox/                      # RAW unprocessed input (DO NOT DELETE)
+│   ├── craftedworkflows_master.md    # Master brain dump
+│   ├── outbound_playbook.md          # DM flows + lead sourcing
+│   └── sales_call_playbook.md        # Sales scripts + roleplays
 └── README.md                   # This file
+```
 
 ---
 
-## Inbox (Raw Capture)
+## Purpose of Each Folder
 
-**Location:** `04_Knowledge/Inbox/`
-
-Raw, unprocessed knowledge capture. **Do not edit inbox files.**
-
-Processing workflow:
-1. Read inbox file completely
-2. Extract structured knowledge
-3. Create/update files in appropriate directories above
-4. Cross-reference with existing docs
-5. Leave inbox file untouched (audit trail)
-
-**Current Inbox Files:**
-- `craftedworkflows_master.md` — Company manifesto, philosophy, offers, funnels
-- `outbound_playbook.md` — 5 DM flows, daily targeting playbook, lead sourcing
-- `sales_call_playbook.md` — Complete call script, 8 roleplays, objection handling
+| Folder | Purpose | Git Tracked |
+|--------|---------|-------------|
+| `Company/` | Company identity, strategy, positioning | ✅ Yes |
+| `Playbooks/` | Operational how-to guides | ✅ Yes |
+| `Offers/` | Product packages, pricing | ✅ Yes |
+| `Research/` | Market research, competitive intel | ✅ Yes |
+| `Templates/` | Reusable document templates | ✅ Yes |
+| `SOPs/` | Standard operating procedures | ✅ Yes |
+| `Frameworks/` | Strategic frameworks | ✅ Yes |
+| `Competitive_Intelligence/` | Competitor analysis | ✅ Yes |
+| `Market_Intelligence/` | Market trends, sizing | ✅ Yes |
+| `Case_Studies/` | Client success stories | ✅ Yes |
+| `Prompts/` | AI prompts for operations | ✅ Yes |
+| `Skills/` | Skill library for AI employees | ✅ Yes |
+| `Assets/` | Static assets (images, logos) | ✅ Yes |
+| `Inbox/` | **RAW input — never delete, never modify** | ✅ Yes |
 
 ---
 
 ## Naming Conventions
 
-| Type | Convention | Example |
-|------|------------|---------|
-| Directory | PascalCase | `Playbooks`, `Company` |
-| Markdown file | PascalCase_with_Underscores | `Sales_Call_Playbook.md` |
-| Subdirectory | PascalCase | `Sales/`, `Outreach/` |
-| Cross-reference | Relative markdown link | `[DM Flows](../Outreach/DM_Flows.md)` |
+### Files
+- **Format:** `Pascal_Case.md` (e.g., `Sales_Call_Playbook.md`)
+- **Index files:** `README.md` (one per directory)
+- **No spaces, no special chars**
+
+### Directories
+- **Format:** `Pascal_Case` (e.g., `Playbooks/`, `Competitive_Intelligence/`)
+- **Singular** for category folders (e.g., `Playbooks/` not `Playbook/`)
+
+### Cross-References
+- Use **relative markdown links**: `[Link Text](./Relative/Path.md)`
+- Always link, never duplicate content
 
 ---
 
-## Cross-Reference Standards
+## How to Ingest New Knowledge
 
-1. **Link, don't duplicate** — Use `[Link Text](../Path/File.md)`
-2. **Index files** — Each directory has `README.md` with index
-3. **Update indexes** — When adding files, update parent README
+### 1. Raw Input → Inbox
+All raw input (meeting notes, brain dumps, articles) goes to `Inbox/` as-is.
 
----
+### 2. Process Inbox → Structured KB
+- Read Inbox file completely
+- Extract concepts into appropriate `Playbooks/`, `Company/`, `Offers/`, etc.
+- **Improve** existing docs instead of creating duplicates
+- Cross-reference with relative links
+- Leave Inbox file **untouched**
 
-## Ingestion Process (For Future Documents)
+### 3. Update Index
+- Update relevant `README.md` index files
+- Update this `README.md` if structure changes
 
-When adding new knowledge:
-
-1. **Check** — Does a suitable document already exist?
-2. **Place** — Put in correct directory per structure above
-3. **Name** — Follow naming conventions
-4. **Link** — Add to parent README.md index
-4. **Cross-ref** — Add relevant cross-references
-5. **Commit** — Version control everything
-
-**Never:**
-- Duplicate content across files
-- Put raw/unprocessed content in knowledge directories
-- Create files without updating parent index
+### 4. Commit & Push
+- Logical commits per logical change
+- Descriptive commit messages
 
 ---
 
-## Architecture Principles
+## Ingestion Checklist
 
-1. **Single Source of Truth** — Each concept lives in one place
-2. **No Duplication** — Reference, don't copy
-3. **Actionable** — Every doc should inform a decision
-5. **Version Controlled** — Git history = audit trail
-6. **Human + AI Readable** — Clear structure, consistent formatting
+When processing an Inbox file:
 
----
-
-## Maintenance
-
-- **Monthly:** Review for drift, broken links, outdated info
-- **Quarterly:** Audit structure, consolidate duplicates
-- **Annually:** Major restructure if needed
+- [ ] Read entire file completely
+- [ ] Identify all distinct concepts/topics
+- [ ] Map each to existing KB location (or create new)
+- [ ] Improve existing docs (don't duplicate)
+- [ ] Add cross-references
+- [ ] Leave Inbox file untouched
+- [ ] Update relevant README indexes
+- [ ] Commit with descriptive message
 
 ---
 
-## Related
+## Knowledge Architecture Principles
 
-- [Playbooks](../Playbooks/README.md)
-- [Company](../Company/README.md)
-- [Offers](../Offers/README.md)
-- [Research](../Research/README.md)
+1. **Documentation > Memory** — If it's not written, it doesn't exist
+2. **Reference > Duplication** — Link, don't copy
+3. **Structure > Chaos** — Everything has a home
+4. **Version Control** — Every change tracked
+5. **Inbox is Sacred** — Never modify, never delete
+
+---
+
+## Executive Runtime Integration
+
+The executive runtime (`runtime/`) can discover knowledge by:
+
+```python
+from pathlib import Path
+
+KB_ROOT = Path("04_Knowledge")
+
+# Discover all playbooks
+playbooks = list((KB_ROOT / "Playbooks").rglob("*.md"))
+
+# Load company context
+company_philosophy = (KB_ROOT / "Company" / "Core_Philosophy.md").read_text()
+target_market = (KB_ROOT / "Company" / "Target_Market.md").read_text()
+
+# Load specific playbook
+dm_flows = (KB_ROOT / "Playbooks" / "Outreach" / "DM_Flows.md").read_text()
+```
+
+---
+
+## Verification
+
+Run this to verify KB structure:
+```bash
+find 04_Knowledge -type f -name "*.md" | head -20
+```
+
+Should show structured markdown files across all categories.

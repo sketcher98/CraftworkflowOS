@@ -1,167 +1,124 @@
 # Pricing Packages
 
-## Core Philosophy
-
-**Price attaches to identity change, not deliverables.**
-
-Never say: "This includes X, Y, Z automations"
-Always say: "This removes you from this part of the business"
+CraftedWorkflows offer tiers and pricing logic.
 
 ---
 
-## The Automation Escape System™ (Core Offer)
+## Tier Overview
 
-### Tiers
-
-| Tier | Name | Price Range | Best For | Outcome |
-|------|------|-------------|----------|---------|
-| **Jumpstart** | $2,500–$4,000 | Solopreneurs drowning in busywork | Essential automations: lead → follow-up, basic dashboards | You stop doing repetitive tasks |
-| **Goldilocks** | $6,000–$12,000 | Growing agencies & service teams | End-to-end client workflows, AI handling internal ops, reduced freelancer dependency | The business runs without constant oversight |
-| **Visionary** | $15,000–$30,000+ | Founders ready to scale cleanly | Full system architecture, AI operators & decision logic, executive dashboards, ongoing optimization | You stop being the farmhand |
+| Tier | Name | Price Range | Best For | Core Outcome |
+|------|------|-------------|----------|--------------|
+| **1** | **Jumpstart** | $2,500–$4,000 | Solopreneurs, freelancers | Remove obvious bottlenecks, save 10–15 hrs/week |
+| **2** | **Goldilocks** | $6,000–$12,000 | Agencies, small teams | Replace people with systems, reduce freelancer dependency |
+| **3** | **Visionary** | $15,000–$30,000+ | $30k+/mo founders | Remove founder from daily ops, full system architecture |
 
 ---
 
-## Price Logic (Why These Numbers Hold)
+## Tier 1: Jumpstart ($2,500–$4,000)
 
-### Jumpstart ($2.5k–4k)
-- Removes: 10–15 hrs/week → ~40–60 hrs/month
-- If they value time at $50/hr: $2,000–$3,000/month regained
-- Forever monthly value
-- Minimum rational price: $2,500–$4,000 one-time
-- Below this feels suspiciously cheap
+**Best for:** Solopreneurs, freelancers drowning in busywork
 
-### Goldilocks ($6k–12k) — CORE OFFER
-- Removes need for: VA, Ops coordinator, Manual follow-up
-- Typical alternative: $1k–$3k/month forever
+### What It Removes
+- 10–15 hrs/week of manual busywork
+- Lead follow-up chaos
+- Basic onboarding friction
+- Simple reporting gaps
+
+### Includes
+- Lead → follow-up automation
+- Basic client onboarding system
+- Simple dashboard (leads, calls, clients)
+- 30-day optimization support
+
+### Guarantee
+> Save 10+ hrs/week or 2nd month free
+
+### Price Logic
+- Removes ~40–60 hrs/month
+- At $50/hr value = $2,000–$3,000/mo regained
+- Forever
+- **Minimum rational price: $2,500–$4,000**
+
+---
+
+## Tier 2: Goldilocks ($6,000–$12,000) — CORE OFFER
+
+**Best for:** Agencies & small teams ($20k–$50k/mo) ready to replace people with systems
+
+### What It Removes
+- Need for VA / Ops coordinator ($1k–$3k/mo)
+- Manual follow-up ($1k–$3k/mo equivalent)
+- Freelancer management overhead
+- Founder as bottleneck
+
+### Includes
+- End-to-end client workflows
+- AI handling internal ops
+- Reduced freelancer dependency
+- Centralized system architecture (Notion hub)
+- 30-day optimization support
+
+### Guarantee
+> If this doesn't remove you as the bottleneck as defined, we keep working until it does.
+
+### Price Logic
+- Replaces: VA ($1.5k), Ops coordinator ($2k), Manual follow-up ($2k)
+- Typical alternative: $5.5k–$7.5k/mo forever
 - Plus management overhead
-- Annualized: $12k–$36k/year (and still fragile)
-- Strong price band: $6k–$12k one-time
-- Feels expensive vs nothing, cheap vs hiring
-
-### Visionary ($15k–30k+)
-- Outcome: Founder disappears, business runs
-- For $30k+/mo founders:
-  - One bad quarter of burnout > fee
-  - One bad hire > fee
-  - One failed scale attempt > fee
-- Not replacing a tool — replacing founder's nervous system
-- Anchoring range: $15k–$30k+
+- **Annualized: $66k–$90k/year**
+- **Strong price band: $6,000–$12,000 one-time**
 
 ---
 
-## Offer Stack (Value Explosion)
+## Tier 3: Visionary ($15,000–$30,000+)
 
-### Core System Install
-- Sales pipeline automation
-- Lead follow-ups (AI + logic)
-- Client onboarding system
-- Internal ops & handoff workflows
-- CRM + tool integrations
-- **Value: $7,500+**
+**Best for:** $30k+/mo founders ready to scale cleanly
 
-### Speed Enhancers (Urgency)
-- Done-for-you setup
-- No-code / no dev dependency
-- Live walkthrough + recordings
-- Go-live in 14–30 days
-- **Value: $3,000+**
+### Outcome
+Founder disappears. Business runs.
 
-### Certainty Builders (Reduce Fear)
-- Workflow map before build
-- Automation replacement plan (people → systems)
-- Fail-safe & fallback logic
-- Testing & optimization
-- **Value: $2,000+**
+### Includes
+- Full system architecture
+- AI operators & decision logic
+- Executive dashboards
+- Ongoing optimization
+- Founder exit layer
 
-### Risk Reducers (The Close)
-- 30-day post-launch support
-- Priority fixes
-- Clear ROI checkpoints
-- "If it doesn't reduce workload, we fix it free"
-- **Value: $2,500+**
-
-**Total Value: $15,000+**  
-**Your Price: $3,000–$7,500 (depending on scope)**
-
----
-
-## Why These Prices Hold on Calls
-
-Because your script already does the work:
-
-1. You quantify the pain (hours → money)
-2. You expose hiring as the false solution
-3. You reframe systems as permanent fixes
-4. You let them say the numbers first
-4. By the time price shows up, they've already pre-sold themselves
-
----
-
-## Guarantee
-
-### The CraftedWorkflows Guarantee
-
-> **If your AI systems don't reduce manual workload within 30 days of launch, we continue optimizing at no extra cost until they do.**
-
-- Outcome-based
-- Believable
-- Non-abusive
-- Perfect for services
+### Price Logic
+- One bad quarter of burnout > fee
+- One bad hire > fee
+- One failed scale attempt > fee
+- Replacing founder's nervous system
+- **Anchoring: $15k–$30k+**
 
 ---
 
 ## Downsell
 
 **System Blueprint** — $750–$1,500
-- Workflow map
-- Automation replacement plan
-- Task list for internal build
+- Architecture only, no build
+- For DIY-capable founders
 
 ---
 
 ## Upsells
 
-| Upsell | Price | Description |
-|--------|-------|-------------|
-| Speed Install | $1,500–$3,000 | Done-for-you in 7–14 days |
-| Founder Exit Layer | $5,000–$10,000 | Executive dashboards, AI operators, exit-ready docs |
+| Upsell | Range | Purpose |
+|--------|-------|---------|
+| Speed Install | $1,500–$3,000 | Done-for-you setup |
+| Founder Exit Layer | $5,000–$10,000 | Full founder removal |
+| **Retainer: Optimization** | $500–$1,000/mo | Maintenance + expansion |
+| **Retainer: Executive Oversight** | $1,500–$3,000/mo | Fractional COO |
 
 ---
 
-## Retainer
+## Final Stack (Clean View)
 
-| Tier | Price | Includes |
-|------|-------|----------|
-| Optimization | $500–$1,000/mo | Monitoring, bi-weekly optimization, new system builds |
-| Executive Oversight | $1,500–$3,000/mo | Fractional CAO, strategic oversight, team alignment |
+| Tier | Name | Range | Core Result |
+|------|------|-------|-------------|
+| 1 | Jumpstart | $2.5k–4k | Remove busywork |
+| 2 | Goldilocks | $6k–12k | Replace people |
+| 3 | Visionary | $15k–30k+ | Remove founder |
 
----
-
-## Final Offer Stack (Clean View)
-
-| Tier | Name | Price | Removes You From |
-|------|------|-------|------------------|
-| **Jumpstart** | $2.5k–4k | Busywork (10–15 hrs/wk) |
-| **Goldilocks** | $6k–12k | People + busywork (replaces VA/coordinator) |
-| **Visionary** | $15k–30k+ | Daily operations (you become owner, not operator) |
-
----
-
-## Why These Prices Hold
-
-Because your script does the work:
-1. You quantify pain (hours → money)
-2. You expose hiring as false solution
-3. You reframe systems as permanent fixes
-4. You let them say the numbers first
-5. By the time price appears, they've pre-sold themselves
-
----
-
-## The Core Rule (NEVER BREAK)
-
-> **Never say:** "This includes X, Y, Z automations"
-> 
-> **Always say:** "This removes you from this part of the business"
-
-Price attaches to identity change, not deliverables.
+**Downsell:** System Blueprint ($750–1.5k)
+**Upsells:** Speed Install, Founder Exit, Optimization Retainer
