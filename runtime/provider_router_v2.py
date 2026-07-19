@@ -799,7 +799,7 @@ def rule_matches(rule: str, objective: str, context: Optional[RuntimeContext]) -
     elif rule == "reasoning":
         return any(kw in objective_lower for kw in ["reasoning", "think", "logic", "complex reasoning", "nemotron"])
     elif rule == "primary":
-        return any(kw in objective_lower for kw in ["create", "add", "new", "insert", "search", "find", "query", "get", "read", "update", "modify", "edit", "change", "delete", "remove", "list", "all"])
+        return any(kw in objective_lower for kw in ["create", "add", "new", "insert", "search", "find", "query", "get", "read", "update", "modify", "edit", "change", "delete", "remove", "list", "all", "log", "record", "save"])
     elif rule == "fallback":
         return any(kw in objective_lower for kw in ["fallback", "backup", "alternative", "airtable"])
 
