@@ -31,7 +31,7 @@ Bring the CraftedWorkflows story to life through motion and video — founder co
 - Brand Designer (motion tokens, brand in motion)
 - UI/UX Designer (micro-interactions, prototype motion)
 - Web Experience Designer (page transitions, scroll animations)
-- Visual Content Designer (video snippets for social, GIFs)
+- Visual Content Designer (thumbnails, video graphics, social clips)
 - Marketing (founder content calendar, campaign videos)
 - Sales Enablement (demo videos, proposal videos)
 
@@ -111,7 +111,7 @@ Bring the CraftedWorkflows story to life through motion and video — founder co
 - Brand motion consistency: 100% (tokens used)
 - Video retention (30s): ≥ 60%
 
-**Secondary (should hit):"
+**Secondary (should hit):**
 - Founder video engagement rate: ≥ 8%
 - Demo video conversion (view → trial): ≥ 5%
 - Case study video completion: ≥ 70%
@@ -159,7 +159,7 @@ Bring the CraftedWorkflows story to life through motion and video — founder co
 ## Memory Usage
 
 **Reads:**
-- `working_memory.creative.brand_system` — Tokens for motion
+- `working_memory.creative.brand_system` — Brand tokens for motion
 - `preferences.creative.motion_patterns` — Proven patterns
 - `context.marketing.founder_content_calendar` — Schedule
 
@@ -318,7 +318,7 @@ def design_motion_system(context, prefs):
 | Brand Designer | Motion token update | `motion_tokens_v{version}.json` | New tokens, component impacts |
 | UI/UX Designer | Micro-interaction spec | `interaction_spec_{component}.json` | Timing, easing, states |
 | Web Experience Designer | Page transition | `transition_spec_{page}.json` | Enter/exit, shared elements |
-| Visual Content Designer | Social video snippet | `snippet_spec_{video}.md` | Duration, format, caption |
+| Visual Content Designer | Social video snippet | `snippet_spec_{video}.md` | Dimensions, format, caption |
 | Marketing | Video delivered | `video_{project}.mp4` + metadata | Platform, tracking, captions |
 | Sales Enablement | Demo video | `demo_video_{feature}.mp4` | Feature, length, CTA |
 

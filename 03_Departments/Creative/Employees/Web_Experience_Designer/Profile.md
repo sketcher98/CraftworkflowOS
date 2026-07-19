@@ -30,7 +30,7 @@ Design the web experience that converts visitors into qualified conversations â€
 **Supports:**
 - Brand Designer (web token usage, brand consistency)
 - UI/UX Designer (shared components, patterns)
-- Visual Content Designer (landing page hero assets, blog visuals)
+- Visual Content Designer (landing page heroes, blog visuals)
 - Marketing (campaign landing pages, lead magnet delivery)
 - Commercial (proposal micro-sites, client portal entry)
 

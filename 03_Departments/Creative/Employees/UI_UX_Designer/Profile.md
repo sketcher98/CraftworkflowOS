@@ -80,7 +80,7 @@ Design product interfaces that make complex automation invisible — dashboards,
 ---
 
 ## Entry Conditions
-- New feature/dashboad requirement from Engineering/Delivery
+- New feature/dashboard requirement from Engineering/Delivery
 - Design system gap identified
 - Usability issue reported
 - Design QA for release

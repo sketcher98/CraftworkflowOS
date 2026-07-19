@@ -116,7 +116,7 @@ Produce the visual assets that make messaging convert — social graphics, sales
 - Template adoption: ≥ 90% of assets use templates
 - Asset library accuracy: 100% (metadata, versions, rights)
 
-**Secondary (should hit):"
+**Secondary (should hit):**
 - Social asset engagement lift (vs. template baseline): ≥ 15%
 - Proposal asset conversion contribution: measurable A/B
 - Case study approval rate (client): ≥ 95%
