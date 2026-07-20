@@ -3,10 +3,10 @@
 Notion Workspace Discovery Script (Composio-first)
 
 Discovers all existing pages and databases in the CraftedWorkflows Notion workspace
-using the Composio tool abstraction layer.
+using the Composio tool abstraction layer (composio-client==1.42.0).
 
 Usage:
-    export COMPOSIO_API_KEY=ak_TuiWHgaUhPpcZ-A23xOi
+    export COMPOSIO_API_KEY=ak_vOd8LNQTbfKpxB3aq122
     python scripts/discover_notion_workspace.py
 
 Note: Requires Composio Notion toolkit to be connected in Composio dashboard.
@@ -37,7 +37,7 @@ def detect_auth_mode() -> tuple[AuthMode, Dict]:
     else:
         raise RuntimeError(
             "No valid authentication found.\n"
-            "Option 1 (Composio): export COMPOSIO_API_KEY=ak_TuiWHgaUhPpcZ-A23xOi\n"
+            "Option 1 (Composio): export COMPOSIO_API_KEY=ak_***\n"
             "Option 2 (Direct API): export NOTION_API_KEY=*** && export NOTION_PARENT_PAGE_ID=xxx"
         )
 
@@ -50,63 +50,131 @@ async def discover_via_composio(api_key: str) -> Dict:
         raise RuntimeError("composio-client package not installed. Install: pip install composio-client")
     
     client = Composio(api_key=api_key)
-    tool_name = "notion"  # Notion toolkit slug in Composio
     
-    async def execute_action(action: str, params: Dict) -> Any:
-        """Execute a Notion action via Composio tool router."""
-        # Use the tool router session to execute actions
-        # First, we need to create a session or use an existing one
-        # For discovery, we'll use the session.execute method
-        
-        # Create a session with Notion toolkit enabled
-        session = client.tool_router.session.create(
-            user_id="discovery_user",
-            toolkits={"notion": {"enable": True}},
-        )
-        
-        # Execute the action
-        result = client.tool_router.session.execute(
-            session_id=session.session_id,
-            tool_slug=f"NOTION_{action.upper()}",
-            arguments=params
-        )
-        return result
+    # Get the connected Notion account to determine the correct user_id
+    accounts = client.connected_accounts.list()
+    notion_account = None
+    user_id = None
+    for acc in accounts.items:
+        if hasattr(acc, 'toolkit') and acc.toolkit.slug == 'notion':
+            notion_account = acc
+            user_id = acc.user_id
+            break
     
-    # Search for accessible content
-    print("1. Searching via Composio...")
-    search_result = await execute_action("SEARCH", {"query": ""})
-    all_results = search_result.get("results", []) if isinstance(search_result, dict) else []
-    print(f"   Found {len(all_results)} total results")
+    if not notion_account or not user_id:
+        raise RuntimeError("No active Notion connection found in Composio. Please connect Notion in Composio dashboard.")
     
+    print(f"   Using user_id: {user_id}")
+    print(f"   Using Notion account: {notion_account.id}")
+    
+    # Create session with connected_accounts to pin the Notion account
+    session = client.tool_router.session.create(
+        user_id=user_id,
+        connected_accounts={"notion": [notion_account.id]},
+    )
+    session_id = session.session_id
+    print(f"   Session created: {session_id}")
+    
+    # Execute NOTION_SEARCH_NOTION_PAGE to find databases (with pagination)
+    print("1. Searching for Notion databases...")
     databases = []
-    pages = []
+    all_db_results = []
+    next_cursor = None
+    has_more = True
+    try:
+        while has_more:
+            args = {"query": "", "filter_value": "database", "page_size": 100}
+            if next_cursor:
+                args["start_cursor"] = next_cursor
+            search_result = client.tools.execute(
+                tool_slug="NOTION_SEARCH_NOTION_PAGE",
+                arguments=args,
+                entity_id=user_id,
+            )
+            # New SDK: result.data.data contains the actual response
+            if hasattr(search_result, 'data') and search_result.data:
+                data = search_result.data
+            elif hasattr(search_result, 'model_dump'):
+                data = search_result.model_dump().get("data", {})
+            else:
+                data = {}
+            db_results = data.get("results", [])
+            all_db_results.extend(db_results)
+            has_more = data.get("has_more", False)
+            next_cursor = data.get("next_cursor")
+            print(f"   Found {len(db_results)} databases (total: {len(all_db_results)}, has_more: {has_more})")
+        
+        for db in all_db_results:
+            if db.get("object") == "database":
+                db_id = db["id"]
+                try:
+                    db_data = client.tools.execute(
+                        tool_slug="NOTION_FETCH_DATABASE",
+                        arguments={"database_id": db_id},
+                        entity_id=user_id,
+                    )
+                    if hasattr(db_data, 'data') and db_data.data:
+                        db_data_dict = db_data.data
+                    elif hasattr(db_data, 'model_dump'):
+                        db_data_dict = db_data.model_dump().get("data", {})
+                    else:
+                        db_data_dict = {}
+                    title = extract_title(db_data_dict)
+                    databases.append({
+                        "id": db_id,
+                        "title": title,
+                        "url": f"https://notion.so/{db_id.replace('-', '')}",
+                        "properties": db_data_dict.get("properties", {}),
+                        "created_time": db_data_dict.get("created_time"),
+                        "last_edited_time": db_data_dict.get("last_edited_time"),
+                    })
+                    print(f"   📊 Database: {title} ({db_id})")
+                except Exception as e:
+                    print(f"   Failed to get database {db_id}: {e}")
+    except Exception as e:
+        print(f"   Database search failed: {e}")
     
-    for result in all_results:
-        if result.get("object") == "database":
-            db_id = result["id"]
-            try:
-                db_data = await execute_action("GET_DATABASE", {"database_id": db_id})
-                title = extract_title(db_data)
-                databases.append({
-                    "id": db_id,
+    # Search for pages (with pagination)
+    print("2. Searching for Notion pages...")
+    pages = []
+    all_page_results = []
+    next_cursor = None
+    has_more = True
+    try:
+        while has_more:
+            args = {"query": "", "filter_value": "page", "page_size": 100}
+            if next_cursor:
+                args["start_cursor"] = next_cursor
+            search_result = client.tools.execute(
+                tool_slug="NOTION_SEARCH_NOTION_PAGE",
+                arguments=args,
+                entity_id=user_id,
+            )
+            # New SDK: result.data.data contains the actual response
+            if hasattr(search_result, 'data') and search_result.data:
+                data = search_result.data
+            elif hasattr(search_result, 'model_dump'):
+                data = search_result.model_dump().get("data", {})
+            else:
+                data = {}
+            page_results = data.get("results", [])
+            all_page_results.extend(page_results)
+            has_more = data.get("has_more", False)
+            next_cursor = data.get("next_cursor")
+            print(f"   Found {len(page_results)} pages (total: {len(all_page_results)}, has_more: {has_more})")
+        
+        for page in all_page_results:
+            if page.get("object") == "page":
+                page_id = page["id"]
+                title = extract_title(page)
+                pages.append({
+                    "id": page_id,
                     "title": title,
-                    "url": f"https://notion.so/{db_id.replace('-', '')}",
-                    "properties": db_data.get("properties", {}),
-                    "created_time": db_data.get("created_time"),
-                    "last_edited_time": db_data.get("last_edited_time"),
+                    "url": f"https://notion.so/{page_id.replace('-', '')}",
                 })
-                print(f"   📊 Database: {title} ({db_id})")
-            except Exception as e:
-                print(f"   Failed to get database {db_id}: {e}")
-        elif result.get("object") == "page":
-            page_id = result["id"]
-            title = extract_title(result)
-            pages.append({
-                "id": page_id,
-                "title": title,
-                "url": f"https://notion.so/{page_id.replace('-', '')}",
-            })
-            print(f"   📄 Page: {title} ({page_id})")
+                print(f"   📄 Page: {title} ({page_id})")
+    except Exception as e:
+        print(f"   Page search failed: {e}")
     
     return {"databases": databases, "pages": pages, "mode": "composio"}
 
@@ -149,7 +217,6 @@ async def discover_via_direct_api(api_key: str, parent_page_id: str) -> Dict:
                     "created_time": db_data.get("created_time"),
                     "last_edited_time": db_data.get("last_edited_time"),
                 })
-                print(f"   📊 Database: {title} ({db_id})")
             elif child.get("type") == "child_page":
                 page_id = child["id"]
                 page_data = await get_page(session, HEADERS, BASE_URL, page_id)
