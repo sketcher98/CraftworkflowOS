@@ -61,6 +61,10 @@ def load_hot_cache(runtime):
     # 03_Departments - Organization structure
     runtime.organization = load_org()
 
+    # Canonical local Notion index: load once for this session.
+    from runtime.notion_workspace_index import get_notion_workspace_index
+    runtime.notion_workspace_index = get_notion_workspace_index(ROOT)
+
     runtime.hot_loaded = True
     print("Hot cache loaded (static context).")
 

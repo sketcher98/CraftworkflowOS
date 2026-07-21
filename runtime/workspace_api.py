@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Any
 from dataclasses import dataclass, asdict
 import json
+import time
 from datetime import datetime
 
 # Runtime imports
@@ -24,6 +25,7 @@ from runtime.commercial_briefing import run_commercial_briefing
 from runtime.task import Task
 from runtime.task_manager import TaskManager
 from runtime.checkpoint import load_checkpoint, save_checkpoint
+from runtime.notion_workspace_index import get_notion_workspace_index
 
 
 @dataclass
@@ -52,6 +54,7 @@ class WorkspaceAPI:
         self.workspace_root = Path(workspace_root)
         self.runtime = None
         self.task_manager = TaskManager()
+        self.notion_workspace_index = get_notion_workspace_index(self.workspace_root)
         self._initialized = False
     
     def initialize(self, force_refresh: bool = False) -> APIResponse:
@@ -59,6 +62,7 @@ class WorkspaceAPI:
         try:
             self.runtime = OperatingContext()
             self.runtime = load_company(self.runtime)
+            self.notion_workspace_index = self.runtime.notion_workspace_index
             
             # Always load warm cache for immediate usability
             self.runtime = refresh_runtime(self.runtime, tier="warm")
@@ -176,7 +180,7 @@ class WorkspaceAPI:
                 owner=owner,
                 priority=priority
             )
-            self.task_manager.add_task(task)
+            self.task_manager.add(task)
             return APIResponse(success=True, data=task.to_dict())
         except Exception as e:
             return APIResponse(success=False, error=str(e))
@@ -190,7 +194,8 @@ class WorkspaceAPI:
     def complete_task(self, task_id: str) -> APIResponse:
         """Mark a task as complete."""
         self._ensure_initialized()
-        task = self.task_manager.get_task(task_id)
+        tasks = self.task_manager.get_tasks()
+        task = next((t for t in tasks if t.id == task_id), None)
         if task:
             task.complete()
             return APIResponse(success=True, data=task.to_dict())
@@ -408,6 +413,100 @@ Active
             return APIResponse(success=True, data={"status": "archived", "project": project_name})
         except Exception as e:
             return APIResponse(success=False, error=str(e))
+
+    # =========================================================================
+    # NOTION WORKSPACE INDEX LOOKUPS
+    # =========================================================================
+    #
+    # These methods consult the local NotionWorkspaceIndex first (fast, in-memory).
+    # Only if an item is not found locally would external Notion search be needed.
+    # The index is loaded once at boot from notion_workspace_discovery.json.
+    # Rediscovery only happens if cache is missing, >24h old, or explicitly requested.
+
+    def find_notion_database(self, database_id: str) -> APIResponse:
+        """Find a Notion database by ID using the local index (fast, in-memory)."""
+        self._ensure_initialized()
+        db = self.notion_workspace_index.find_database(database_id)
+        if db:
+            return APIResponse(success=True, data=db, error=None)
+        return APIResponse(success=False, error=f"Database '{database_id}' not found in local index")
+
+    def find_notion_page(self, page_id: str) -> APIResponse:
+        """Find a Notion page by ID using the local index (fast, in-memory)."""
+        self._ensure_initialized()
+        page = self.notion_workspace_index.find_page(page_id)
+        if page:
+            return APIResponse(success=True, data=page, error=None)
+        return APIResponse(success=False, error=f"Page '{page_id}' not found in local index")
+
+    def find_notion_by_title(self, title: str, kind: str = None) -> APIResponse:
+        """Find Notion pages/databases by title (case-insensitive) using local index."""
+        self._ensure_initialized()
+        matches = self.notion_workspace_index.find_by_title(title, kind=kind)
+        return APIResponse(success=True, data=matches)
+
+    def find_notion_by_url(self, url: str) -> APIResponse:
+        """Find a Notion page/database by URL using local index."""
+        self._ensure_initialized()
+        item = self.notion_workspace_index.find_by_url(url)
+        if item:
+            return APIResponse(success=True, data=item)
+        return APIResponse(success=False, error=f"URL '{url}' not found in local index")
+
+    def find_notion_pages_by_database(self, database_id: str) -> APIResponse:
+        """Find all Notion pages belonging to a database using local index."""
+        self._ensure_initialized()
+        pages = self.notion_workspace_index.find_pages_by_database(database_id)
+        return APIResponse(success=True, data=pages)
+
+    def find_notion_by_id(self, object_id: str) -> APIResponse:
+        """Find any Notion object (page or database) by ID using local index."""
+        self._ensure_initialized()
+        item = self.notion_workspace_index.find_by_id(object_id)
+        if item:
+            return APIResponse(success=True, data=item)
+        return APIResponse(success=False, error=f"Object '{object_id}' not found in local index")
+
+    def get_all_notion_databases(self) -> APIResponse:
+        """Get all Notion databases from local index."""
+        self._ensure_initialized()
+        databases = self.notion_workspace_index.all_databases()
+        return APIResponse(success=True, data=databases)
+
+    def get_all_notion_pages(self) -> APIResponse:
+        """Get all Notion pages from local index."""
+        self._ensure_initialized()
+        pages = self.notion_workspace_index.all_pages()
+        return APIResponse(success=True, data=pages)
+
+    def get_notion_index_status(self) -> APIResponse:
+        """Get status of the local Notion workspace index."""
+        self._ensure_initialized()
+        index = self.notion_workspace_index
+        cache_path = index.cache_path
+        return APIResponse(success=True, data={
+            "loaded": index.loaded,
+            "stale": index.needs_refresh(),
+            "cache_exists": cache_path.exists(),
+            "cache_path": str(cache_path),
+            "cache_age_seconds": time.time() - cache_path.stat().st_mtime if cache_path.exists() else None,
+            "databases_count": len(index.databases),
+            "pages_count": len(index.pages),
+            "indexed_at": datetime.fromtimestamp(cache_path.stat().st_mtime).isoformat() if cache_path.exists() else None,
+        })
+
+    def request_notion_rediscovery(self) -> APIResponse:
+        """Explicitly request a full Notion workspace rediscovery (slow - scans all 7,439+ pages)."""
+        self._ensure_initialized()
+        from runtime.notion_workspace_index import request_notion_rediscovery
+        index = request_notion_rediscovery(workspace_root=self.workspace_root)
+        self.notion_workspace_index = index
+        self.runtime.notion_workspace_index = index
+        return APIResponse(success=True, data={
+            "status": "rediscovery completed",
+            "databases": len(index.databases),
+            "pages": len(index.pages)
+        })
 
 
 # Global API instance

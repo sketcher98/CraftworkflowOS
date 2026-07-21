@@ -30,6 +30,7 @@ class OperatingContext:
     session_manager: dict = field(default_factory=dict)
     runtime_context: dict = field(default_factory=dict)
     organization: dict = field(default_factory=dict)
+    notion_workspace_index: any = None
 
     # Warm Cache (Dynamic - refreshed on demand)
     warm_loaded: bool = False
